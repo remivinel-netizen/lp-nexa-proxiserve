@@ -10,6 +10,62 @@
   var THEME = form ? (form.getAttribute('data-thematique') || '') : '';
   function track(ev, data){ var o = {event: ev, thematique: THEME}; for (var k in data) o[k] = data[k]; dl.push(o); }
   try { var y = document.getElementById('annee'); if (y) y.textContent = new Date().getFullYear(); } catch(e){}
+  var doux = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- apparition au défilement ---------- */
+  /* Les éléments listés reçoivent .rv puis .is-vu quand ils entrent dans
+     l'écran. Les enfants d'un même groupe s'enchaînent (variable --i). */
+  (function(){
+    var groupes = ['.proof ul', '.grid', '.steps', '.spec', '.ticks', '.faq > div', '.badges', '.hub', '.timeline'];
+    var seuls = ['.sec__head', '.photo', '.devis', '.attention', '.final__box', '.cta-line', '.carte'];
+    var cibles = [];
+    groupes.forEach(function(sel){
+      Array.prototype.forEach.call(document.querySelectorAll(sel), function(g){
+        Array.prototype.forEach.call(g.children, function(el, i){ el.classList.add('rv'); el.style.setProperty('--i', i); cibles.push(el); });
+      });
+    });
+    seuls.forEach(function(sel){ Array.prototype.forEach.call(document.querySelectorAll(sel), function(el){ if (!el.classList.contains('rv')) { el.classList.add('rv'); cibles.push(el); } }); });
+    if (doux || !('IntersectionObserver' in window)) { cibles.forEach(function(el){ el.classList.add('is-vu'); }); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('is-vu'); io.unobserve(e.target); } });
+    }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+    cibles.forEach(function(el){
+      /* déjà visible au chargement (héros, bandeau) : pas d'attente */
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.9) el.classList.add('is-vu'); else io.observe(el);
+    });
+  })();
+
+  /* ---------- chiffres qui montent ---------- */
+  /* Les nombres des statistiques comptent de 0 à leur valeur quand on les voit.
+     La valeur finale est déjà dans le HTML : sans script, rien ne manque. */
+  (function(){
+    if (doux || !('IntersectionObserver' in window)) return;
+    var nums = document.querySelectorAll('.hero__stats b, .card .big, .spec b');
+    Array.prototype.forEach.call(nums, function(n){
+      var txt = n.textContent.replace(/\u00a0/g, ' ').trim();
+      var m = txt.match(/^(\+?)(\d[\d ]*)(.*)$/);
+      if (!m) return;
+      var fin = parseInt(m[2].replace(/ /g, ''), 10); if (!fin) return;
+      var pre = m[1], suf = m[3];
+      var sufEl = n.querySelector('small'); var sufHtml = sufEl ? sufEl.outerHTML : '';
+      if (sufEl) suf = '';
+      function fmt(v){ return pre + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '\u202f') + suf + sufHtml; }
+      var vu = false;
+      new IntersectionObserver(function(es, o){
+        if (!es[0].isIntersecting || vu) return;
+        vu = true; o.disconnect();
+        var dur = 1000, dep = null;
+        function trame(now){
+          if (dep === null) dep = now;
+          var t = Math.min(1, (now - dep) / dur), e = 1 - Math.pow(1 - t, 3);
+          n.innerHTML = fmt(Math.round(fin * e));
+          if (t < 1) requestAnimationFrame(trame);
+        }
+        requestAnimationFrame(trame);
+      }, {threshold: .6}).observe(n);
+    });
+  })();
 
   /* ---------- numéro d'appel ---------- */
   /* Les boutons d'appel sont écrits dans le HTML avec data-tel. Tant que le
@@ -114,9 +170,11 @@
   function go(i){
     if (i < 0 || i >= steps.length || i === cur) return;
     var old = steps[cur];
-    old.classList.remove('is-active');
+    old.classList.remove('is-active', 'from-back');
+    var retour = i < cur;
     cur = i;
     var st = steps[cur];
+    st.classList.toggle('from-back', retour);
     st.classList.add('is-active');
     paint(); setHeight();
     try { st.querySelector('.step__q').focus({preventScroll: true}); } catch(e){}
