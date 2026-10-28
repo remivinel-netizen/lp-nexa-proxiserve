@@ -316,6 +316,15 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .sec--navy .badge{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff}
 .sec--navy .badge .ico{color:#9BE48E}
 
+/* agences par région : repère rouge, villes séparées par un point */
+.agences{display:grid;gap:18px;margin-top:26px}
+@media (min-width:700px){.agences{grid-template-columns:auto auto;gap:40px;justify-content:start}.agences--col{grid-template-columns:1fr;gap:22px;margin-top:6px}}
+.agences__region{padding-left:16px;border-left:3px solid var(--red)}
+.agences__region > span{display:block;font-size:13px;letter-spacing:.02em;color:var(--sky);margin-bottom:6px}
+.agences__region ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 6px;font-size:19px;font-weight:700;color:var(--navy);line-height:1.5}
+.agences__region li+li::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--red);margin:0 8px 3px 2px}
+.sec--navy .agences__region ul{color:#fff}
+.sec--navy .agences__region > span{color:rgba(255,255,255,.7)}
 /* villes et mentions en ligne, sans bulles */
 .villes{margin-top:18px;font-size:16px;line-height:1.5;color:var(--ink-2)}
 .sec--navy .villes{color:rgba(255,255,255,.85)}
