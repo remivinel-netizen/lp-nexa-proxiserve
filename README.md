@@ -21,6 +21,7 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 - `assets/style.css` : feuille commune. Charte : bleu nuit `#184562`, rouge `#FF4A56`, bleu `#4E94E3`, orange `#F38F35`, vert `#5DC44E`, Roboto.
 - `assets/app.js` : moteur du questionnaire (étapes, validation, commune par code postal, envoi, redirection) et suivi dataLayer. Un seul script pour toutes les pages.
 - `assets/config.js` : réglages à poser avant le Go Live (voir ci-dessous).
+- Fonds : direction artistique « lames de radiateur » (doc Claude Design du 28/10/2026). Héros bleu nuit `#184562` à plat avec lames `#1F5273` et une lame rouge `#C22A37` (`.lames`, `.lame-rouge`), sections claires à anneaux (`.sec--rings`) ou à motif de lames (`.sec--dots`), bandeau CTA rouge `#C22A37` (`.final--lames`), pied `#123650` à motif. Les boutons restent au rouge de la charte `#FF4A56`, le rouge `#C22A37` de la DA est « à confirmer ».
 - `assets/icons.svg` : pictos. Le logo est écrit en HTML (`.brand`) pour rester net ; `img/logo-source.png` est le fichier fourni par Nexa.
 
 ## À régler avant le Go Live
@@ -31,9 +32,13 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 4. **Bandeau cookies IwlCMP** : créer un site dans le CMP, remplacer `data-site-id="REMPLACER"` et décommenter.
 5. **Montant des aides** : 10 900 € est affiché (angle de la proposition Nexa). À confirmer avec Nexa (10 800 ou 10 900). Chercher `10&nbsp;900` dans les pages PAC et simulateur.
 6. **Mentions légales et confidentialité** : compléter les crochets (raison sociale, RCS, RGE, médiateur, organisme prêteur, DPO).
-7. **Photos** : les visuels viennent de proxiserve.fr et de proxiserve.fr/monchauffagisteprive (photos de techniciens, pompe à chaleur, chaudière), redimensionnés en WebP + JPG dans `img/`. Faire confirmer par Nexa que Proxiserve détient les droits pour un usage publicitaire. Héros : `.hero__bg` (photo + voile bleu nuit ou rouge), photos de section : `.photo`.
+7. **Photos** : dans les sections uniquement (`.photo`), pas dans les héros (choix de la DA). Sources : proxiserve.fr et proxiserve.fr/monchauffagisteprive (techniciens, pompe à chaleur), plus trois images générées avec Higgsfield (technicien PAC, chaudière neuve, salon d'hiver). Faire confirmer par Nexa que Proxiserve détient les droits des photos du site pour un usage publicitaire.
 8. **Polices** : Roboto chargé depuis Google Fonts. À auto-héberger avant le Go Live si on veut la même rigueur que mon-bilan-solaire.
 9. **Hébergement** : GitHub Pages expose l'URL `remivinel-netizen.github.io`, visible dans la barre d'adresse. Prévoir un domaine (type monchauffagisteprive.fr) ou un Worker Cloudflare avant diffusion, comme pour les autres landings.
+
+## Règle d'écriture
+
+Aucun texte ni chiffre inventé. Tout vient de la feuille de route, du contrat, de la proposition Nexa, de la fiche Atlantic ou du site Proxiserve. Les seuls éléments issus de règles publiques : obligation d'entretien annuel (décret 2009-649), attestation remise sous 15 jours, TVA à 5,5 % (affichée aussi sur le site MonChauffagistePrivé), fin des chaudières fioul neuves depuis juillet 2022, numéro Urgence Sécurité Gaz, répartition locataire / propriétaire pour l'entretien.
 
 ## Payload envoyé
 

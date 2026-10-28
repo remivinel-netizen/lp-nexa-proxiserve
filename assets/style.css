@@ -4,7 +4,7 @@
 
 :root{
   --navy:#184562; --navy-deep:#0F3049; --navy-ink:#0B2335;
-  --red:#FF4A56; --red-deep:#E1313E; --red-pale:#FFE9EB;
+  --red:#FF4A56; --red-deep:#E1313E; --red-pale:#FFE9EB; --red-da:#C22A37; --lame:#1F5273;
   --sky:#4E94E3; --sky-pale:#E8F1FB; --sky-mist:#F3F7FB;
   --orange:#F38F35; --orange-pale:#FDEEDF;
   --green:#5DC44E; --green-deep:#3E9A31; --green-pale:#E6F6E2;
@@ -75,17 +75,6 @@ p{margin:0}
 
 /* ---------- héros ---------- */
 .hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 60%,var(--navy-ink) 100%)}
-.hero::after{content:"";position:absolute;z-index:-1;right:-12vw;top:-30%;width:62vw;height:160%;background:radial-gradient(closest-side,rgba(243,143,53,.45),rgba(255,74,86,.22) 45%,transparent 72%);filter:blur(10px);pointer-events:none}
-.hero--urgence::before{background:linear-gradient(135deg,#9B2630 0%,#C22A37 55%,#D9303D 100%)}
-.hero--urgence::after{right:auto;left:-20vw;background:radial-gradient(closest-side,rgba(243,143,53,.6),rgba(243,143,53,.15) 50%,transparent 72%)}
-/* photo de fond : sous les voiles, au-dessus du dégradé */
-.hero__bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
-.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85;filter:saturate(.9)}
-.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(24,69,98,.96) 0%,rgba(24,69,98,.86) 42%,rgba(15,48,73,.55) 100%)}
-.hero--urgence .hero__bg::after{background:linear-gradient(100deg,rgba(155,38,48,.96) 0%,rgba(194,42,55,.86) 42%,rgba(217,48,61,.6) 100%)}
-.hero--photo::after{opacity:.35}
-@media (min-width:900px){.hero__bg::after{background:linear-gradient(100deg,rgba(24,69,98,.97) 0%,rgba(24,69,98,.9) 36%,rgba(24,69,98,.4) 58%,rgba(15,48,73,.12) 100%)}.hero--urgence .hero__bg::after{background:linear-gradient(100deg,rgba(155,38,48,.97) 0%,rgba(194,42,55,.88) 36%,rgba(194,42,55,.4) 58%,rgba(217,48,61,.15) 100%)}}
 
 .hero__inner{display:grid;gap:34px;padding:44px 20px 56px}
 .hero__copy h1{color:#fff;font-size:clamp(32px,5vw,52px);font-weight:700}
@@ -105,6 +94,24 @@ p{margin:0}
   .hero__call{grid-template-columns:auto 1fr;align-items:center}
   .hero__call .btn{width:auto}
 }
+
+/* ---------- fonds DA « lames de radiateur » ---------- */
+.lames{position:absolute;display:flex;gap:14px;pointer-events:none;z-index:0}
+.lames span{display:block;width:28px;border-radius:999px;background:var(--lame)}
+.lames--haut{top:-60px;align-items:flex-start}
+.lames--bas{bottom:-70px;align-items:flex-end}
+.lames .rouge{background:var(--red-da)}
+.lame-rouge{position:absolute;width:28px;height:110px;border-radius:999px;background:var(--red-da);pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+@media (max-width:899px){.lames--bas,.lame-rouge{display:none}.lames--haut{right:-10px!important;transform:scale(.7);transform-origin:top right}}
+.sec--rings{background:#fff;position:relative;overflow:hidden}
+.sec--rings::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at calc(100% + 40px) 50%,transparent 120px,rgba(24,69,98,.06) 120px 148px,transparent 148px 200px,rgba(24,69,98,.06) 200px 228px,transparent 228px 280px,rgba(24,69,98,.06) 280px 308px,transparent 308px)}
+.sec--rings > .wrap{position:relative}
+.sec--dots{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect x='17' y='10' width='6' height='20' rx='3' fill='%23184562' fill-opacity='.06'/%3E%3C/svg%3E")}
+.final--lames .lames span{width:24px;background:rgba(255,255,255,.14)}
+.final--lames .lames--haut{left:-10px;top:-60px;gap:12px}
+.final--lames .lames--bas{right:20px;bottom:-60px;gap:12px}
+.final--navy{background:var(--navy)}
 
 /* ---------- questionnaire ---------- */
 .quiz{background:#fff;color:var(--ink);border-radius:var(--r-card);padding:22px 22px 24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);position:relative}
@@ -237,7 +244,7 @@ p{margin:0}
 .steps p{margin-top:6px;font-size:15.5px;color:var(--ink-2);line-height:1.5}
 .steps .dur{display:inline-block;margin-top:10px;padding:4px 10px;border-radius:999px;background:var(--sky-pale);color:var(--navy);font-size:13px;font-weight:500}
 .steps li.is-key .dur{background:rgba(255,255,255,.14);color:#fff}
-@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}.steps li{padding:68px 22px 26px}.steps li::before{top:22px}}
+@media (min-width:900px){.steps{grid-template-columns:repeat(4,1fr)}.steps--2{grid-template-columns:1fr 1fr}.steps li{padding:68px 22px 26px}.steps li::before{top:22px}}
 
 /* devis illustré (page PAC / simulateur) */
 .devis{background:#fff;border-radius:var(--r-card);border:1px solid var(--line);padding:26px 24px;box-shadow:0 30px 60px -40px rgba(24,69,98,.5);max-width:460px}
@@ -310,15 +317,15 @@ p{margin:0}
 .quiz .or{color:var(--ink-3)}.quiz .or::before,.quiz .or::after{background:var(--line)}
 
 /* CTA final */
-.final{background:var(--navy);color:#fff;padding:72px 0;position:relative;overflow:hidden;isolation:isolate}
-.final::after{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:900px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(243,143,53,.35),rgba(255,74,86,.15) 50%,transparent 75%);filter:blur(20px)}
+.final{background:var(--red-da);color:#fff;padding:72px 0;position:relative;overflow:hidden;isolation:isolate}
 .final__box{max-width:640px;margin:0 auto;text-align:center}
 .final h2{color:#fff}
 .final p{margin:16px auto 0;font-size:18px;color:rgba(255,255,255,.85);max-width:32em}
 .final .btn{margin-top:28px}
+.final .wrap{position:relative;z-index:1}
 
 /* pied */
-.foot{background:var(--navy-ink);color:rgba(255,255,255,.72);padding:48px 0 110px;font-size:13.5px;line-height:1.55}
+.foot{background-color:#123650;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Crect x='21' y='12' width='6' height='24' rx='3' fill='%231A4462'/%3E%3C/svg%3E");color:rgba(255,255,255,.72);padding:48px 0 110px;font-size:13.5px;line-height:1.55}
 @media (min-width:900px){.foot{padding-bottom:56px}}
 .foot .brand{margin-bottom:22px}
 .foot p{margin-top:10px;max-width:70em}
