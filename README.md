@@ -42,7 +42,7 @@ Aucun texte ni chiffre inventé. Tout vient de la feuille de route, du contrat, 
 
 ## Payload envoyé
 
-JSON en POST : `source`, `thematique`, `priorite` (chaud / tiède / froid, règle par page dans `window.MCP_PRIORITE`), toutes les réponses du questionnaire (nom du champ = `data-step`), `code_postal`, `commune`, `departement`, `zone` (couverte / hors zone), `prenom`, `nom`, `email`, `telephone`, `telephone_e164`, `consentement_contact`, `consentement_texte`, `consentement_horodatage`, `date_envoi`, `page_url`, `referrer`, `user_agent`, `gclid`, `gbraid`, `wbraid`, `fbclid`, `utm_*`, `premiere_visite`.
+JSON en POST : `source`, `thematique`, `priorite` (chaud / tiède / froid, règle par page dans `window.MCP_PRIORITE`), toutes les réponses du questionnaire (nom du champ = `data-step`), `adresse`, `code_postal`, `commune`, `departement`, `zone` (couverte / hors zone), `prenom`, `nom`, `email`, `telephone`, `telephone_e164`, `consentement_contact`, `consentement_texte`, `consentement_horodatage`, `date_envoi`, `page_url`, `referrer`, `user_agent`, `gclid`, `gbraid`, `wbraid`, `fbclid`, `utm_*`, `premiere_visite`.
 
 Zone couverte : départements 02, 59, 60, 62, 80 (Hauts-de-France) et 08, 10, 51, 52, 54, 55, 57, 67, 68, 88 (Grand Est). Modifiable dans `config.js`.
 

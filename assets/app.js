@@ -211,6 +211,8 @@
     var st = steps[cur], key = st.getAttribute('data-step'), kind = st.getAttribute('data-kind') || 'radio';
     if (kind === 'radio') return !!checked(key);
     if (kind === 'cp'){
+      var adr = val('adresse');
+      if (adr.length < 5 || !/\d/.test(adr)) { bad(form.elements.adresse, true); note('q-cp-note', 'Indiquez votre adresse, avec le numéro et la rue.', true); return false; }
       var cp = val('code_postal');
       if (!/^\d{5}$/.test(cp)) { bad(form.elements.code_postal, true); note('q-cp-note', 'Indiquez les 5 chiffres de votre code postal.', true); return false; }
       if (state.cpStatus === 'none') { bad(form.elements.code_postal, true); note('q-cp-note', 'Ce code postal ne correspond à aucune commune. Vérifiez-le.', true); return false; }
@@ -277,6 +279,7 @@
   /* ---------- saisie ---------- */
   form.addEventListener('input', function(e){
     var t = e.target;
+    if (t.name === 'adresse'){ bad(t, false); note('q-cp-note', ''); }
     if (t.name === 'code_postal'){
       t.value = t.value.replace(/\D/g, '').slice(0, 5);
       bad(t, false); resetCP();

@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610281522">
+<link rel="stylesheet" href="../assets/style.css?v=202610281548">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -20,7 +20,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610281522"></script>
+<script src="../assets/config.js?v=202610281548"></script>
 <script>
 /* Priorité du lead, transmise avec le payload (chaud / tiède / froid). */
 window.MCP_PRIORITE = function(r){
@@ -141,8 +141,9 @@ window.MCP_PRIORITE = function(r){
 
           <fieldset class="step" data-step="code_postal" data-kind="cp">
             <legend class="step__q" tabindex="-1">Où se trouve votre logement&nbsp;?</legend>
-            <p class="step__hint">Pour vous rattacher à l'agence Proxiserve la plus proche.</p>
+            <p class="step__hint">L'adresse sert à rattacher votre demande à l'agence Proxiserve la plus proche.</p>
             <div class="group">
+      <div class="field"><label for="f-adresse">Adresse</label><input id="f-adresse" name="adresse" type="text" autocomplete="street-address" placeholder="12 rue de la Gare"></div>
               <div class="field"><label for="f-cp">Code postal</label><input id="f-cp" name="code_postal" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="59000" pattern="[0-9]{5}"></div>
             </div>
             <div class="chips" id="q-communes" role="group" aria-label="Choisissez votre commune"></div>
@@ -306,6 +307,6 @@ window.MCP_PRIORITE = function(r){
 </footer>
 
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Recevoir mon étude gratuite</a></div>
-<script src="../assets/app.js?v=202610281522" defer></script>
+<script src="../assets/app.js?v=202610281548" defer></script>
 </body>
 </html>
