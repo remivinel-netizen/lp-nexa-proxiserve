@@ -25,11 +25,9 @@
       if (num) num.textContent = TEL;
       a.addEventListener('click', function(){ track('call_click', {position: a.getAttribute('data-tel') || 'page'}); });
     } else {
-      a.setAttribute('href', '#devis');
-      a.setAttribute('data-go', '');
-      if (num) num.textContent = a.getAttribute('data-tel-fallback') || 'Être rappelé';
-      var sub = a.querySelector('[data-tel-sub]');
-      if (sub) sub.textContent = 'Laissez votre numéro, un conseiller vous appelle';
+      /* Pas de numéro : le bouton disparaît, rien de provisoire à l'écran. */
+      a.hidden = true;
+      var st = a.closest('.sticky'); if (st) st.classList.remove('sticky--2');
     }
   });
 
