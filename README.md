@@ -21,7 +21,7 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 - `assets/style.css` : feuille commune. Charte : bleu nuit `#184562`, rouge `#FF4A56`, bleu `#4E94E3`, orange `#F38F35`, vert `#5DC44E`, Roboto.
 - `assets/app.js` : moteur du questionnaire (étapes, validation, commune par code postal, envoi, redirection) et suivi dataLayer. Un seul script pour toutes les pages.
 - `assets/config.js` : réglages à poser avant le Go Live (voir ci-dessous).
-- Fonds : direction artistique « lames de radiateur » (doc Claude Design du 28/10/2026). Héros bleu nuit `#184562` à plat avec lames `#1F5273` et une lame rouge `#C22A37` (`.lames`, `.lame-rouge`), sections claires à anneaux (`.sec--rings`) ou à motif de lames (`.sec--dots`), bandeau CTA rouge `#C22A37` (`.final--lames`), pied `#123650` à motif. Les boutons restent au rouge de la charte `#FF4A56`, le rouge `#C22A37` de la DA est « à confirmer ».
+- Fonds : direction artistique « lames de radiateur » (doc Claude Design du 28/10/2026). Héros bleu nuit `#184562` à plat avec lames en bleu charte `#4E94E3` translucide et une lame rouge charte `#FF4A56` (`.lames`, `.lame-rouge`), sections claires à anneaux (`.sec--rings`) ou à motif de lames (`.sec--dots`), bandeau CTA rouge `#FF4A56` (`.final--lames`), pied bleu nuit `#184562` à motif. Accent orange `#F38F35` dans les titres du héros, vert `#5DC44E` pour les coches. Toutes les couleurs viennent de la charte MonChauffagistePrivé, le rouge `#C22A37` de la DA n'est pas utilisé.
 - `assets/icons.svg` : pictos. Le logo est écrit en HTML (`.brand`) pour rester net ; `img/logo-source.png` est le fichier fourni par Nexa.
 
 ## À régler avant le Go Live
