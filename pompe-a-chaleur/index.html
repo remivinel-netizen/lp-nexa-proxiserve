@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pompe à chaleur : aides déduites du devis | MonChauffagistePrivé par Proxiserve</title>
+<meta name="description" content="Installation de pompe à chaleur air/eau dans les Hauts-de-France et le Grand Est. MaPrimeRénov' et prime CEE déduites directement du devis, financement à 0 %, travaux sous 1 mois. Étude gratuite.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#184562">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted',wait_for_update:500});
+gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
+</script>
+<!-- <script src="https://cmp.iwantlead.fr/cmp/v1/cmp.js" data-site-id="REMPLACER"></script> -->
+<!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+<script src="../assets/config.js"></script>
+<script>
+/* Priorité du lead, transmise avec le payload (chaud / tiède / froid). */
+window.MCP_PRIORITE = function(r){
+  var concret = r.delai === 'Dès que possible' || r.delai === 'Dans les 3 mois';
+  var chauffe = r.chauffage === 'Fioul' || r.chauffage === 'Gaz' || r.chauffage === 'Électrique';
+  if (r.delai === 'Je me renseigne') return 'froid';
+  if (r.statut === 'Propriétaire' && r.logement === 'Maison' && concret && chauffe) return 'chaud';
+  return 'tiède';
+};
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="MonChauffagistePrivé par Proxiserve">
+      <span class="brand__name">mon<b>chauffagiste</b><em>privé</em></span>
+      <span class="brand__by">PAR <svg class="sun"><use href="../assets/icons.svg#i-sun"/></svg><b>Proxi</b><span>serve</span></span>
+    </a>
+    <div class="top__right">
+      <a class="top__tel" href="#devis" data-tel="header" data-tel-fallback="Être rappelé"><svg class="ico"><use href="../assets/icons.svg#i-phone"/></svg><span><b data-tel-num>Être rappelé</b><span data-tel-sub>Du lundi au vendredi, 8 h à 18 h</span></span></a>
+      <a class="btn btn--red" href="#devis" data-go="header">Mon étude gratuite</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <h1>Pompe à chaleur&nbsp;: les aides <em>déduites directement</em> de votre devis</h1>
+      <p class="hero__lead">MaPrimeRénov' et la prime CEE sont retirées du montant avant que vous ne signiez. Vous voyez votre reste à charge réel, pas un prix catalogue. Les dossiers d'aides, on les monte pour vous.</p>
+      <ul class="hero__ticks">
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Jusqu'à 10&nbsp;900&nbsp;€ d'aides déduites du devis<a href="#notes" style="color:inherit" aria-label="Voir les conditions">*</a></span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Financement à taux 0&nbsp;% sur le reste à charge</span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Travaux sous 1&nbsp;mois après validation du devis</span></li>
+      </ul>
+      <div class="hero__stats">
+        <div><b>RGE</b><span>installateur qualifié, condition des aides</span></div>
+        <div><b>120</b><span>agences Proxiserve en France</span></div>
+        <div><b>3&nbsp;400</b><span>techniciens, équipes internes</span></div>
+      </div>
+    </div>
+
+    <div class="quiz" id="devis">
+      <p class="quiz__title">Votre étude gratuite</p>
+      <p class="quiz__sub">Une minute, sans engagement. Un conseiller vous rappelle pour fixer la visite technique.</p>
+      <div class="quiz__bar">
+        <button type="button" class="qbtn" id="q-back" aria-label="Question précédente" hidden><svg class="ico"><use href="../assets/icons.svg#i-chev-l"/></svg></button>
+        <div class="segs" id="q-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <span class="quiz__count" id="q-count">≈ 1 min</span>
+        <span class="sr" id="q-progres" aria-live="polite">Étape 1 sur 8</span>
+      </div>
+
+      <form id="q-form" novalidate data-source="LP Pompe à chaleur" data-thematique="pompe_a_chaleur" data-endpoint="REMPLACER">
+        <div class="quiz__viewport" id="q-view">
+
+          <fieldset class="step is-active" data-step="statut">
+            <legend class="step__q" tabindex="-1">Vous êtes&hellip;</legend>
+            <p class="step__hint">Une pompe à chaleur se pose chez son propriétaire, c'est la première chose qu'on vérifie.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="statut" value="Propriétaire"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-home"/></svg></span><span class="opt__txt">Propriétaire<small>de mon logement</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="statut" value="Locataire" data-bloque="locataire"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-key"/></svg></span><span class="opt__txt">Locataire</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="logement">
+            <legend class="step__q" tabindex="-1">Vous habitez&hellip;</legend>
+            <p class="step__hint">L'unité extérieure a besoin d'un emplacement dehors, au sol ou en façade.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="logement" value="Maison"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-home"/></svg></span><span class="opt__txt">Une maison<small>individuelle ou mitoyenne</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="logement" value="Appartement"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-building"/></svg></span><span class="opt__txt">Un appartement</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="annee">
+            <legend class="step__q" tabindex="-1">Votre logement a&hellip;</legend>
+            <p class="step__hint">Les aides publiques ne concernent que les logements de plus de 15&nbsp;ans.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="annee" value="Plus de 15 ans"><span class="opt__ico c-green"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg></span><span class="opt__txt">Plus de 15&nbsp;ans<small>construit avant 2011</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="annee" value="Moins de 15 ans" data-bloque="logement_recent"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></span><span class="opt__txt">Moins de 15&nbsp;ans</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="chauffage">
+            <legend class="step__q" tabindex="-1">Vous vous chauffez aujourd'hui&hellip;</legend>
+            <p class="step__hint">Le montant des primes dépend de l'énergie que la pompe à chaleur remplace.</p>
+            <div class="opts opts--2">
+              <label class="opt"><input type="radio" name="chauffage" value="Fioul"><span class="opt__ico c-orange"><svg class="ico"><use href="../assets/icons.svg#i-fuel"/></svg></span><span class="opt__txt">Au fioul</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="chauffage" value="Gaz"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-flame"/></svg></span><span class="opt__txt">Au gaz</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="chauffage" value="Électrique"><span class="opt__ico c-red"><svg class="ico"><use href="../assets/icons.svg#i-bolt"/></svg></span><span class="opt__txt">À l'électrique</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="chauffage" value="Autre"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-thermo"/></svg></span><span class="opt__txt">Autre<small>bois, PAC, granulés</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="surface">
+            <legend class="step__q" tabindex="-1">Quelle surface chauffez-vous&nbsp;?</legend>
+            <p class="step__hint">Une estimation suffit. Elle sert à pré-dimensionner la puissance.</p>
+            <div class="opts opts--2">
+              <label class="opt"><input type="radio" name="surface" value="Moins de 80 m²"><span class="opt__txt">Moins de 80&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="surface" value="80 à 120 m²"><span class="opt__txt">80 à 120&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="surface" value="120 à 160 m²"><span class="opt__txt">120 à 160&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="surface" value="Plus de 160 m²"><span class="opt__txt">Plus de 160&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="delai">
+            <legend class="step__q" tabindex="-1">Quand aimeriez-vous installer&nbsp;?</legend>
+            <p class="step__hint">Les travaux ont lieu sous un mois après validation du devis.</p>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="delai" value="Dès que possible"><span class="opt__ico c-red"><svg class="ico"><use href="../assets/icons.svg#i-bolt"/></svg></span><span class="opt__txt">Dès que possible<small>ma chaudière fatigue ou est en panne</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="delai" value="Dans les 3 mois"><span class="opt__ico c-orange"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></span><span class="opt__txt">Dans les 3 prochains mois</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="delai" value="D'ici un an"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-clock"/></svg></span><span class="opt__txt">D'ici un an</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+              <label class="opt"><input type="radio" name="delai" value="Je me renseigne"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-search"/></svg></span><span class="opt__txt">Je me renseigne pour l'instant</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step" data-step="code_postal" data-kind="cp">
+            <legend class="step__q" tabindex="-1">Où se trouve votre logement&nbsp;?</legend>
+            <p class="step__hint">Pour vous rattacher à l'agence Proxiserve la plus proche.</p>
+            <div class="group">
+              <div class="field"><label for="f-cp">Code postal</label><input id="f-cp" name="code_postal" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="59000" pattern="[0-9]{5}"></div>
+            </div>
+            <div class="chips" id="q-communes" role="group" aria-label="Choisissez votre commune"></div>
+            <p class="note" id="q-cp-note" aria-live="polite"></p>
+            <div class="step__actions"><button type="button" class="btn btn--navy" data-next>Continuer</button></div>
+          </fieldset>
+
+          <fieldset class="step" data-step="identite" data-kind="identite">
+            <legend class="step__q" tabindex="-1">Qui doit-on rappeler&nbsp;?</legend>
+            <p class="step__hint">Un conseiller Proxiserve vous appelle pour caler la visite technique, gratuite.</p>
+            <div class="group group--2">
+              <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" type="text" autocomplete="given-name" autocapitalize="words" placeholder="Camille"></div>
+              <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="family-name" autocapitalize="words" placeholder="Martin"></div>
+              <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="camille.martin@gmail.com"></div>
+              <div class="field"><label for="f-tel">Téléphone</label><div class="tel"><span class="cc">+33</span><input id="f-tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="06 12 34 56 78" maxlength="14"></div></div>
+            </div>
+            <label class="consent" id="q-consent-box">
+              <span class="switch"><input type="checkbox" id="f-consent" name="consentement" value="oui"><span></span></span>
+              <p id="q-consent-text">J'accepte d'être recontacté par téléphone, SMS ou email par Proxiserve pour l'étude de mon projet de pompe à chaleur.</p>
+            </label>
+            <p class="note" id="q-id-note" aria-live="polite"></p>
+            <div class="step__actions"><button type="submit" class="btn btn--red btn--lg" id="q-send">Recevoir mon étude gratuite</button></div>
+          </fieldset>
+
+        </div>
+        <input class="hp" type="text" name="site_web" id="f-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Nos garanties">
+  <div class="wrap">
+    <ul>
+      <li><span class="b c-green"><svg class="ico"><use href="../assets/icons.svg#i-shield"/></svg></span><div><strong>Installateur RGE</strong><span>la condition pour toucher MaPrimeRénov'</span></div></li>
+      <li><span class="b c-sky"><svg class="ico"><use href="../assets/icons.svg#i-euro"/></svg></span><div><strong>Aides déduites du devis</strong><span>vous n'avancez pas les primes</span></div></li>
+      <li><span class="b c-orange"><svg class="ico"><use href="../assets/icons.svg#i-clock"/></svg></span><div><strong>Travaux sous 1 mois</strong><span>après validation du devis</span></div></li>
+      <li><span class="b c-mist"><svg class="ico"><use href="../assets/icons.svg#i-users"/></svg></span><div><strong>Équipes internes</strong><span>techniciens Proxiserve, pièces en stock</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--mist" id="aides">
+  <div class="wrap split">
+    <div class="sec__head">
+      <h2>Ce que vous payez vraiment, c'est ce qu'il reste une fois les aides retirées</h2>
+      <p>Beaucoup d'installateurs affichent un prix, puis vous laissent courir après les primes. Chez Proxiserve, MaPrimeRénov' et la prime CEE sont déduites sur le devis lui-même. Le montant signé, c'est votre reste à charge. Et il peut être financé à taux 0&nbsp;%.</p>
+      <ul class="ticks" style="margin-top:26px">
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Dossiers montés pour vous.</b> MaPrimeRénov', CEE&nbsp;: nos équipes constituent et suivent les demandes.</span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Bilan énergétique offert</b> pendant la visite technique, pour chiffrer sérieusement les économies.</span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Financement à 0&nbsp;%</b> sur le reste à charge, sous réserve d'acceptation du dossier.</span></li>
+      </ul>
+      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="aides">Calculer mon reste à charge</a><small>Visite et étude gratuites</small></div>
+    </div>
+    <div class="devis" aria-label="Exemple de structure du devis">
+      <div class="devis__head"><b>Votre devis Proxiserve</b><span>pompe à chaleur air/eau</span></div>
+      <div class="devis__row"><span>Fourniture et pose<small>Atlantic Alfea Excellia S, mise en service comprise</small></span><b>selon l'étude</b></div>
+      <div class="devis__row devis__row--aide"><span>MaPrimeRénov'<small>selon vos revenus et votre logement</small></span><b>déduite</b></div>
+      <div class="devis__row devis__row--aide"><span>Prime CEE<small>certificats d'économies d'énergie</small></span><b>déduite</b></div>
+      <div class="devis__total"><span>Votre reste à charge</span><b>calculé pour vous</b></div>
+      <p class="devis__note"><span class="devis__tag">Jusqu'à 10&nbsp;900&nbsp;€ d'aides*</span><br>Le montant exact des primes dépend de vos revenus, de votre logement et de l'énergie remplacée. Il est posé noir sur blanc sur le devis, avant signature.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="eligible">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2>Est-ce que c'est pour vous&nbsp;?</h2>
+      <p>On préfère le dire avant la visite plutôt qu'après. Trois conditions ouvrent les aides et rendent le projet rentable.</p>
+    </div>
+    <div class="grid grid--3">
+      <div class="card card--tint card--green"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-home"/></svg></div><h3>Vous êtes propriétaire</h3><p>D'une maison, ou d'un appartement avec un emplacement possible pour l'unité extérieure.</p></div>
+      <div class="card card--tint card--green"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></div><h3>Le logement a plus de 15 ans</h3><p>C'est la condition des aides publiques. En dessous, aucune prime n'est accordée.</p></div>
+      <div class="card card--tint card--green"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-fuel"/></svg></div><h3>Vous chauffez au fioul, au gaz ou à l'électrique</h3><p>Ce sont les remplacements qui font le plus baisser la facture, et qui ouvrent les primes les plus élevées.</p></div>
+    </div>
+    <div class="attention"><b>Une pompe à chaleur n'est jamais « gratuite ».</b> Les aides réduisent fortement le reste à charge, elles ne l'annulent pas. Si quelqu'un vous promet une installation à zéro euro, méfiez-vous.</div>
+  </div>
+</section>
+
+<section class="sec sec--sky" id="materiel">
+  <div class="wrap split split--rev">
+    <div class="sec__head">
+      <h2>Une pompe à chaleur faite pour la rénovation, pas pour le catalogue</h2>
+      <p>Nous installons l'Atlantic Alfea Excellia S, une pompe à chaleur air/eau conçue pour remplacer une chaudière sans refaire les radiateurs. Elle chauffe l'eau de votre circuit existant et l'eau chaude sanitaire.</p>
+      <div class="badges">
+        <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg>Atlantic, fabricant français</span>
+        <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg>Fluide R32</span>
+        <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg>Classe énergétique A+++</span>
+      </div>
+    </div>
+    <div class="spec">
+      <div><b>34&nbsp;dB(A)</b><span>à 5 mètres, pour les modèles 9 et 12&nbsp;kW. Le niveau sonore d'une chambre à coucher.</span></div>
+      <div><b>65&nbsp;°C</b><span>maintenus dans les radiateurs par −15&nbsp;°C dehors. Elle tient l'hiver du Nord et de l'Est.</span></div>
+      <div><b>Jusqu'à 60&nbsp;%</b><span>d'économies d'énergie en remplacement d'une chaudière fioul, selon l'étude Atlantic<a href="#notes" style="color:inherit">**</a>.</span></div>
+      <div><b>Jusqu'à 10&nbsp;ans</b><span>de garantie sous conditions, avec 5&nbsp;ans sur le compresseur, l'échangeur et le ballon.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="etapes">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2>De votre demande à la mise en chauffe, en quatre temps</h2>
+      <p>Rien n'est signé avant la visite technique. Vous décidez avec un devis complet en main.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Un conseiller vous rappelle</h3><p>Il vérifie votre logement, votre chauffage actuel et vos attentes, puis vous propose un créneau de visite.</p><span class="dur">Aux horaires ouvrés</span></li>
+      <li class="is-key"><h3>Visite technique chez vous</h3><p>Étude thermique, repérage acoustique, emplacement de l'unité extérieure. Le bilan énergétique est offert.</p><span class="dur">1 h 30, gratuite</span></li>
+      <li><h3>Devis avec les aides déduites</h3><p>Vous recevez un devis où MaPrimeRénov' et la prime CEE sont déjà retirées. On monte les dossiers.</p><span class="dur">Reste à charge finançable à 0 %</span></li>
+      <li><h3>Installation et mise en service</h3><p>Les techniciens de votre agence posent la pompe à chaleur et la mettent en route avec vous.</p><span class="dur">Sous 1 mois après validation</span></li>
+    </ol>
+    <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="etapes">Demander ma visite technique</a><small>Gratuite et sans engagement</small></div>
+  </div>
+</section>
+
+<section class="sec sec--navy" id="proxiserve">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2>Proxiserve, un grand groupe avec une agence près de chez vous</h2>
+      <p>Leader des services à l'habitat en France, Proxiserve chauffe et entretient des centaines de milliers de logements. Dans les Hauts-de-France et le Grand Est, ce sont des agences locales et des techniciens Proxiserve qui interviennent chez vous.</p>
+    </div>
+    <div class="grid grid--4">
+      <div class="card card--navy card--tint"><div class="big">120</div><h3>agences en France</h3><p>Un réseau national, des équipes de proximité.</p></div>
+      <div class="card card--navy card--tint"><div class="big">3&nbsp;400</div><h3>techniciens</h3><p>Des équipes internes, formées sur le matériel qu'elles posent.</p></div>
+      <div class="card card--navy card--tint"><div class="big">RGE</div><h3>qualification reconnue</h3><p>Indispensable pour MaPrimeRénov' et les CEE.</p></div>
+      <div class="card card--navy card--tint"><div class="big">+500<small>M€</small></div><h3>de chiffre d'affaires</h3><p>La solidité d'un groupe qui sera encore là dans 10 ans.</p></div>
+    </div>
+    <div class="badges">
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Amiens</span>
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Compiègne</span>
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Boulogne-sur-Mer</span>
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Lille métropole</span>
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Metz</span>
+      <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-pin"/></svg>Nancy</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--mist" id="faq">
+  <div class="wrap faq">
+    <div class="sec__head">
+      <h2>Ce qu'on nous demande le plus souvent</h2>
+      <p>Et si votre question n'y est pas, le conseiller y répond lors du rappel.</p>
+    </div>
+    <div>
+      <details><summary>Dois-je changer mes radiateurs&nbsp;?</summary><div class="a">Dans la plupart des cas, non. L'Alfea Excellia S maintient 65&nbsp;°C dans le circuit, ce qui convient aux radiateurs existants. La visite technique le confirme pour votre maison.</div></details>
+      <details><summary>Comment les aides sont-elles déduites du devis&nbsp;?</summary><div class="a">Le montant de MaPrimeRénov' et de la prime CEE est retiré directement sur le devis. Vous ne payez que le reste à charge, et nous suivons les dossiers auprès des organismes.</div></details>
+      <details><summary>Pourquoi « jusqu'à 10&nbsp;900&nbsp;€ » et pas un montant fixe&nbsp;?</summary><div class="a">Le montant dépend de vos revenus, de votre logement et de l'énergie remplacée. Le remplacement d'une chaudière fioul par un ménage aux revenus modestes ouvre les primes les plus élevées. Le chiffre exact est posé sur votre devis.</div></details>
+      <details><summary>Ma maison a moins de 15 ans. Puis-je faire la demande&nbsp;?</summary><div class="a">Vous pouvez installer une pompe à chaleur, mais aucune aide publique ne s'applique aux logements de moins de 15&nbsp;ans. Nous préférons vous le dire tout de suite.</div></details>
+      <details><summary>Est-ce bruyant pour mes voisins&nbsp;?</summary><div class="a">Les modèles 9 et 12&nbsp;kW émettent 34&nbsp;dB(A) à 5&nbsp;mètres, l'équivalent d'une chambre calme. Le repérage acoustique fait partie de la visite technique, justement pour choisir le bon emplacement.</div></details>
+      <details><summary>Qui installe et qui entretient&nbsp;?</summary><div class="a">Des techniciens salariés de Proxiserve, rattachés à l'agence la plus proche de chez vous. Ce sont les mêmes équipes qui assurent ensuite l'entretien annuel.</div></details>
+      <details><summary>La demande m'engage-t-elle&nbsp;?</summary><div class="a">Non. Le rappel, la visite technique et le devis sont gratuits. Vous décidez une fois le devis en main.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="final__box">
+      <h2>Votre reste à charge, calculé sur votre maison</h2>
+      <p>Huit questions, une minute. Un conseiller Proxiserve vous rappelle pour fixer la visite technique gratuite.</p>
+      <a class="btn btn--white btn--lg" href="#devis" data-go="final">Recevoir mon étude gratuite</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="notes">
+  <div class="wrap">
+    <a class="brand brand--light" href="#top" aria-label="MonChauffagistePrivé par Proxiserve">
+      <span class="brand__name">mon<b>chauffagiste</b><em>privé</em></span>
+      <span class="brand__by">PAR <svg class="sun"><use href="../assets/icons.svg#i-sun"/></svg><b>Proxi</b><span>serve</span></span>
+    </a>
+    <p>* Jusqu'à 10&nbsp;900&nbsp;€&nbsp;: montant maximal cumulé de MaPrimeRénov' et de la prime CEE pour l'installation d'une pompe à chaleur air/eau, selon les barèmes en vigueur. Le montant réel dépend des revenus du foyer, du logement et de l'énergie remplacée. Il est indiqué sur le devis avant signature. Les aides sont réservées aux logements achevés depuis plus de 15&nbsp;ans et à une installation réalisée par un professionnel RGE.</p>
+    <p>** Jusqu'à 60&nbsp;%&nbsp;: pourcentage d'économie annuelle sur la facture de chauffage estimé par Atlantic via 100 études de dimensionnement (Proji-PAC, 2023-2024), pour le remplacement d'une chaudière fioul, à 0,252&nbsp;€/kWh d'électricité et 0,1301&nbsp;€/L de fioul. L'économie réelle dépend de votre logement et de vos usages.</p>
+    <p>Financement à taux 0&nbsp;% sous réserve d'acceptation du dossier par l'organisme prêteur. Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.</p>
+    <p class="foot__legal">MonChauffagistePrivé est le service aux particuliers de Proxiserve, [raison sociale, forme, capital, siège et RCS à compléter], qualifié RGE n°&nbsp;[à compléter]. Les visites et installations sont réalisées par les agences Proxiserve des Hauts-de-France et du Grand Est.</p>
+    <nav aria-label="Informations légales"><a href="../mentions-legales/">Mentions légales</a><a href="../confidentialite/">Politique de confidentialité</a></nav>
+    <p style="margin-top:18px">© <span id="annee">2026</span> MonChauffagistePrivé par Proxiserve</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Recevoir mon étude gratuite</a></div>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
