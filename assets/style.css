@@ -1,3 +1,7 @@
+/* Roboto auto-hébergée : une seule police variable (graisses 400 à 700),
+   37 ko, plus de requête vers Google Fonts. */
+@font-face{font-family:'Roboto';src:url('../fonts/roboto-var.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap}
+
 /* MonChauffagistePrivé par Proxiserve — feuille commune aux landings.
    Charte : bleu nuit 184562, rouge FF4A56, bleu 4E94E3, orange F38F35,
    vert 5DC44E. Typo : Roboto. */
