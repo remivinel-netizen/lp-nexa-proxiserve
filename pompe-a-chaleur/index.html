@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="../img/hero-conseil-1300.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="../assets/style.css">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
@@ -49,7 +50,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-conseil-1300.webp 1300w, ../img/hero-conseil-800.webp 800w"><img src="../img/hero-conseil-1300.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <h1>Pompe à chaleur&nbsp;: les aides <em>déduites directement</em> de votre devis</h1>
@@ -234,7 +236,8 @@ window.MCP_PRIORITE = function(r){
         <span class="badge"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg>Classe énergétique A+++</span>
       </div>
     </div>
-    <div class="spec">
+    <figure class="photo photo--landscape" style="margin:0"><picture><source type="image/webp" srcset="../img/pac-exterieure-640.webp"><img src="../img/pac-exterieure-640.jpg" alt="Unité extérieure d'une pompe à chaleur Atlantic installée contre une façade" loading="lazy" decoding="async" width="640"></picture><figcaption class="photo__cap">Unité extérieure installée en façade, sur un support anti-vibration.</figcaption></figure>
+    <div class="spec" style="margin-top:18px">
       <div><b>34&nbsp;dB(A)</b><span>à 5 mètres, pour les modèles 9 et 12&nbsp;kW. Le niveau sonore d'une chambre à coucher.</span></div>
       <div><b>65&nbsp;°C</b><span>maintenus dans les radiateurs par −15&nbsp;°C dehors. Elle tient l'hiver du Nord et de l'Est.</span></div>
       <div><b>Jusqu'à 60&nbsp;%</b><span>d'économies d'énergie en remplacement d'une chaudière fioul, selon l'étude Atlantic<a href="#notes" style="color:inherit">**</a>.</span></div>

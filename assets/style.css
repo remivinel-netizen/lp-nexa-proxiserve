@@ -79,6 +79,14 @@ p{margin:0}
 .hero::after{content:"";position:absolute;z-index:-1;right:-12vw;top:-30%;width:62vw;height:160%;background:radial-gradient(closest-side,rgba(243,143,53,.45),rgba(255,74,86,.22) 45%,transparent 72%);filter:blur(10px);pointer-events:none}
 .hero--urgence::before{background:linear-gradient(135deg,#9B2630 0%,#C22A37 55%,#D9303D 100%)}
 .hero--urgence::after{right:auto;left:-20vw;background:radial-gradient(closest-side,rgba(243,143,53,.6),rgba(243,143,53,.15) 50%,transparent 72%)}
+/* photo de fond : sous les voiles, au-dessus du dégradé */
+.hero__bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.85;filter:saturate(.9)}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(24,69,98,.96) 0%,rgba(24,69,98,.86) 42%,rgba(15,48,73,.55) 100%)}
+.hero--urgence .hero__bg::after{background:linear-gradient(100deg,rgba(155,38,48,.96) 0%,rgba(194,42,55,.86) 42%,rgba(217,48,61,.6) 100%)}
+.hero--photo::after{opacity:.35}
+@media (min-width:900px){.hero__bg::after{background:linear-gradient(100deg,rgba(24,69,98,.97) 0%,rgba(24,69,98,.9) 36%,rgba(24,69,98,.4) 58%,rgba(15,48,73,.12) 100%)}.hero--urgence .hero__bg::after{background:linear-gradient(100deg,rgba(155,38,48,.97) 0%,rgba(194,42,55,.88) 36%,rgba(194,42,55,.4) 58%,rgba(217,48,61,.15) 100%)}}
+
 .hero__inner{display:grid;gap:34px;padding:44px 20px 56px}
 .hero__copy h1{color:#fff;font-size:clamp(32px,5vw,52px);font-weight:700}
 .hero__copy h1 em{font-style:normal;color:#FFD1A8}
@@ -247,6 +255,14 @@ p{margin:0}
 .split{display:grid;gap:36px;align-items:center}
 @media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:64px}.split--rev > :first-child{order:2}}
 .split .sec__head{margin-bottom:0}
+
+/* photo de section */
+.photo{border-radius:var(--r-card);overflow:hidden;box-shadow:0 30px 60px -40px rgba(24,69,98,.5);background:var(--sky-pale)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo--portrait{aspect-ratio:4/5;max-width:460px}
+.photo--landscape{aspect-ratio:16/10}
+.photo__cap{display:block;padding:12px 16px;font-size:13.5px;color:var(--ink-2);background:#fff;border-top:1px solid var(--line)}
+.split--photo{align-items:center}
 
 /* fiche produit */
 .spec{display:grid;gap:14px}

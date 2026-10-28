@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="../img/hero-technicien-1600.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="../assets/style.css">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
@@ -46,7 +47,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-technicien-1600.webp 1600w, ../img/hero-technicien-1000.webp 1000w, ../img/hero-technicien-640.webp 640w"><img src="../img/hero-technicien-1600.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <h1>Entretien de chaudière&nbsp;: un technicien Proxiserve <em>près de chez vous</em></h1>
@@ -174,13 +176,14 @@ window.MCP_PRIORITE = function(r){
       <p>Une visite d'entretien Proxiserve suit le même protocole partout, quelle que soit la marque de votre chaudière. Comptez environ une heure.</p>
       <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="visite">Planifier ma visite</a><small>Un conseiller vous rappelle</small></div>
     </div>
-    <ul class="ticks">
+    <div><figure class="photo photo--portrait" style="margin:0"><picture><source type="image/webp" srcset="../img/technicien-chaudiere-520.webp"><img src="../img/technicien-chaudiere-520.jpg" alt="Technicien Proxiserve en train d'entretenir une chaudière murale" loading="lazy" decoding="async" width="520"></picture></figure>
+    <ul class="ticks" style="margin-top:22px">
       <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Nettoyage</b> du corps de chauffe, du brûleur et de la veilleuse.</span></li>
       <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Contrôle des sécurités</b>&nbsp;: thermostats, soupape, vase d'expansion, détection de flamme.</span></li>
       <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Réglage de la combustion</b> et mesure des rejets, dont le monoxyde de carbone.</span></li>
       <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Vérification de l'évacuation</b> des fumées et de la ventilation du local.</span></li>
       <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Conseils d'usage</b> et remise de l'attestation d'entretien.</span></li>
-    </ul>
+    </ul></div>
   </div>
 </section>
 

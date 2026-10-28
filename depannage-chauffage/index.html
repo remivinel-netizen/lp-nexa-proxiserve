@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="../img/hero-depannage-840.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="../assets/style.css">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
@@ -46,7 +47,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero hero--urgence">
+<section class="hero hero--urgence hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-depannage-840.webp 840w"><img src="../img/hero-depannage-840.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <h1>Panne de chauffage&nbsp;? Un technicien Proxiserve <em>part de l'agence voisine</em></h1>
@@ -182,6 +184,7 @@ window.MCP_PRIORITE = function(r){
       <p>Une panne en plein hiver est rarement un hasard. Le technicien vous dit si l'appareil est simplement mal entretenu, s'il arrive en fin de vie, ou si une pièce va lâcher à son tour. À vous de choisir la suite, sans pression.</p>
     </div>
     <div class="grid">
+      <figure class="photo photo--landscape" style="margin:0"><picture><source type="image/webp" srcset="../img/technicien-portrait-550.webp"><img src="../img/technicien-portrait-550.jpg" alt="Technicien Proxiserve souriant devant une maison" loading="lazy" decoding="async" width="550"></picture></figure>
       <div class="card card--tint card--green"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></div><h3>Un contrat d'entretien</h3><p>La visite annuelle obligatoire, et selon la formule, les dépannages inclus. C'est ce qui évite de revivre cette page.</p></div>
       <div class="card card--tint card--orange"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-euro"/></svg></div><h3>Un remplacement, si c'est plus raisonnable</h3><p>Quand réparer coûte trop cher pour ce que ça rapporte, Proxiserve installe chaudières et pompes à chaleur, avec les aides déduites du devis.</p></div>
     </div>

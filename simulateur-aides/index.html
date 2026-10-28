@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="preload" as="image" href="../img/hero-technicien-ext-1240.webp" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="../assets/style.css">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
@@ -47,7 +48,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-technicien-ext-1240.webp 1240w, ../img/hero-technicien-ext-800.webp 800w"><img src="../img/hero-technicien-ext-1240.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <h1>Pompe à chaleur&nbsp;: à combien d'aides <em>avez-vous droit</em> en 2026&nbsp;?</h1>
@@ -227,7 +229,8 @@ window.MCP_PRIORITE = function(r){
       <h2>Vous chauffez au fioul&nbsp;? Le calendrier joue pour vous, pas contre vous</h2>
       <p>Depuis juillet 2022, il n'est plus possible d'installer une chaudière fioul neuve. Le jour où la vôtre lâche, il faudra changer d'énergie, dans l'urgence et sans forcément les aides. Anticiper, c'est choisir le bon moment et le bon reste à charge.</p>
     </div>
-    <div class="spec">
+    <figure class="photo photo--landscape" style="margin:0"><picture><source type="image/webp" srcset="../img/pac-exterieure-640.webp"><img src="../img/pac-exterieure-640.jpg" alt="Unité extérieure d'une pompe à chaleur Atlantic installée contre une façade" loading="lazy" decoding="async" width="640"></picture></figure>
+    <div class="spec" style="margin-top:18px">
       <div><b>Jusqu'à 60&nbsp;%</b><span>d'économies d'énergie en remplaçant une chaudière fioul par une Alfea Excellia S, selon l'étude Atlantic**.</span></div>
       <div><b>Primes maximales</b><span>le remplacement d'une chaudière fioul est le cas le mieux aidé par MaPrimeRénov' et les CEE.</span></div>
       <div><b>Radiateurs conservés</b><span>65&nbsp;°C dans le circuit&nbsp;: dans la plupart des maisons, les radiateurs existants restent en place.</span></div>
