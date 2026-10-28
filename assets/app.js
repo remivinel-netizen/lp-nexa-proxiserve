@@ -138,7 +138,10 @@
     if (e) e.preventDefault();
     if (!quiz) return;
     track('cta_click', {position: (e && e.currentTarget && e.currentTarget.getAttribute('data-go')) || 'page'});
-    quiz.scrollIntoView({behavior: 'smooth', block: 'start'});
+    /* Sur grand écran le formulaire est dans le héros : on remonte au héros
+       entier, sinon le titre se retrouve coupé au-dessus de l'écran. */
+    var cible = (window.innerWidth >= 900 && quiz.closest('.hero')) || quiz;
+    cible.scrollIntoView({behavior: 'smooth', block: 'start'});
     setTimeout(function(){ try { var q = quiz.querySelector('.step.is-active .step__q'); if (q) q.focus({preventScroll: true}); } catch(e){} }, 500);
   }
   Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function(a){ a.addEventListener('click', versQuiz); });
