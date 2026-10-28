@@ -47,7 +47,8 @@
       var m = txt.match(/^(\+?)(\d[\d ]*)(.*)$/);
       if (!m) return;
       var fin = parseInt(m[2].replace(/ /g, ''), 10); if (!fin) return;
-      var pre = m[1], suf = m[3];
+      /* on garde l'espace entre le nombre et l'unité (34 dB, 65 °C) */
+      var pre = m[1], suf = (/ $/.test(m[2]) ? '\u00a0' : '') + m[3];
       var sufEl = n.querySelector('small'); var sufHtml = sufEl ? sufEl.outerHTML : '';
       if (sufEl) suf = '';
       function fmt(v){ return pre + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '\u202f') + suf + sufHtml; }
