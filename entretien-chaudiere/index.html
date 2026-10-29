@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610281548">
+<link rel="preload" as="image" href="../img/hero-technicien-1600.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/style.css?v=202610291602">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -20,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610281548"></script>
+<script src="../assets/config.js?v=202610291602"></script>
 <script>
 window.MCP_PRIORITE = function(r){
   if (r.situation === 'Jamais entretenue' || r.situation === 'Plus d’un an') return 'chaud';
@@ -45,7 +46,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-technicien-1600.webp 1600w, ../img/hero-technicien-1000.webp 1000w, ../img/hero-technicien-640.webp 640w"><img src="../img/hero-technicien-1600.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="lames lames--haut" style="right:40px;top:-70px" aria-hidden="true"><span style="height:240px"></span><span style="height:200px"></span><span style="height:260px"></span><span style="height:220px"></span><span style="height:250px"></span></div><div class="lame-rouge" style="right:120px;bottom:40px" aria-hidden="true"></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
@@ -160,13 +162,12 @@ window.MCP_PRIORITE = function(r){
   </div>
 </section>
 
-<section class="sec sec--thermo" id="visite">
-  <svg class="deco--thermo" viewBox="0 0 440 440" fill="none" aria-hidden="true"><circle class="piste" cx="220" cy="220" r="190" stroke-width="30"/><circle class="chaleur" cx="220" cy="220" r="190" stroke-width="30" stroke-linecap="round" stroke-dasharray="90 1194" transform="rotate(215 220 220)"/></svg>
+<section class="sec sec--dots" id="visite">
   <div class="wrap split">
     <div class="sec__head">
       <h2>Ce que fait le technicien pendant la visite</h2>
       <p>L'entretien annuel suit les points prévus par la réglementation, quelle que soit la marque de votre chaudière.</p>
-      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="visite">Planifier ma visite</a><small>Un conseiller vous rappelle</small></div>
+      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="visite">Planifier ma visite</a></div>
       <figure class="photo photo--landscape" style="margin:28px 0 0"><picture><source type="image/webp" srcset="../img/technicien-chaudiere-840.webp"><img src="../img/technicien-chaudiere-840.jpg" alt="Technicien Proxiserve en train d'entretenir une chaudière murale" loading="lazy" decoding="async" width="840"></picture></figure>
     </div>
     <ul class="ticks">
@@ -179,7 +180,8 @@ window.MCP_PRIORITE = function(r){
   </div>
 </section>
 
-<section class="sec sec--grid" id="etapes">
+<section class="sec sec--thermo" id="etapes">
+  <svg class="deco--thermo" viewBox="0 0 440 440" fill="none" aria-hidden="true"><circle class="piste" cx="220" cy="220" r="190" stroke-width="30"/><circle class="chaleur" cx="220" cy="220" r="190" stroke-width="30" stroke-linecap="round" stroke-dasharray="90 1194" transform="rotate(215 220 220)"/></svg>
   <div class="wrap">
     <div class="sec__head">
       <h2>Comment ça se passe</h2>
@@ -187,7 +189,7 @@ window.MCP_PRIORITE = function(r){
     </div>
     <ol class="steps">
       <li><h3>Vous laissez vos coordonnées</h3><p>Quatre questions, une minute. Rien n'est à payer à cette étape.</p><span class="dur">1 minute</span></li>
-      <li class="is-key"><h3>Un conseiller vous rappelle</h3><p>Il vous confirme la formule adaptée à votre appareil et fixe un créneau de passage avec vous.</p><span class="dur">Aux horaires ouvrés</span></li>
+      <li><h3>Un conseiller vous rappelle</h3><p>Il vous confirme la formule adaptée à votre appareil et fixe un créneau de passage avec vous.</p><span class="dur">Aux horaires ouvrés</span></li>
       <li><h3>Le technicien intervient</h3><p>Un technicien de votre agence Proxiserve réalise l'entretien complet chez vous.</p><span class="dur">Au créneau convenu</span></li>
       <li><h3>Vous recevez l'attestation</h3><p>Le document à conserver pour votre assureur. Il est remis dans les 15 jours qui suivent la visite.</p><span class="dur">Après la visite</span></li>
     </ol>
@@ -251,6 +253,6 @@ window.MCP_PRIORITE = function(r){
 </footer>
 
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Demander mon rendez-vous</a></div>
-<script src="../assets/app.js?v=202610281548" defer></script>
+<script src="../assets/app.js?v=202610291602" defer></script>
 </body>
 </html>

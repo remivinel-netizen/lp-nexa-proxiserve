@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610281548">
+<link rel="preload" as="image" href="../img/hero-technicien-ext-1240.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/style.css?v=202610291602">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -20,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610281548"></script>
+<script src="../assets/config.js?v=202610291602"></script>
 <script>
 window.MCP_PRIORITE = function(r){
   var chauffe = r.chauffage === 'Fioul' || r.chauffage === 'Gaz' || r.chauffage === 'Électrique';
@@ -46,11 +47,12 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-technicien-ext-1240.webp 1240w, ../img/hero-technicien-ext-800.webp 800w"><img src="../img/hero-technicien-ext-1240.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="lames lames--haut" style="right:20px;top:-70px" aria-hidden="true"><span style="height:200px"></span><span style="height:240px"></span><span style="height:180px"></span><span style="height:220px"></span><span style="height:200px"></span><span style="height:250px"></span><span style="height:190px"></span></div><div class="lames lames--bas" style="left:400px;bottom:-60px" aria-hidden="true"><span style="height:140px"></span><span style="height:110px" class="rouge"></span></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
-      <h1 class="ent e1">Pompe à chaleur&nbsp;: à combien d'aides <em>avez-vous droit</em> en 2026&nbsp;?</h1>
+      <h1 class="ent e1">Pompe à chaleur&nbsp;: à combien d'aides <em><span style="white-space:nowrap">avez-vous</span> droit</em> en 2026&nbsp;?</h1>
       <p class="hero__lead ent e2">MaPrimeRénov' et la prime CEE peuvent couvrir jusqu'à 10&nbsp;900&nbsp;€ d'une installation<a href="#notes" aria-label="Voir les conditions">*</a>. Le montant dépend de votre logement, de votre chauffage actuel et de vos revenus. Six questions, et vous savez où vous en êtes.</p>
       <ul class="hero__ticks ent e3">
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Aides déduites directement du devis, accompagnement sur les dossiers</span></li>
@@ -191,7 +193,7 @@ window.MCP_PRIORITE = function(r){
   </div>
 </section>
 
-<section class="sec sec--blocs" id="devis-explique">
+<section class="sec sec--dots" id="devis-explique">
   <div class="wrap split split--rev">
     <div class="sec__head">
       <h2>Chez Proxiserve, les aides sont déduites sur le devis</h2>
@@ -201,7 +203,7 @@ window.MCP_PRIORITE = function(r){
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Pompe à chaleur Atlantic Alfea Excellia S</b>, fabriquée en France, 65&nbsp;°C maintenus par −15&nbsp;°C.</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Installation par les techniciens</b> de votre agence Proxiserve.</span></li>
       </ul>
-      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="devis">Simuler mes aides</a><small>Une minute, sans engagement</small></div>
+      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="devis">Simuler mes aides</a></div>
     </div>
     <div class="devis" aria-label="Exemple de structure du devis">
       <div class="devis__head"><b>Votre devis Proxiserve</b></div>
@@ -214,7 +216,7 @@ window.MCP_PRIORITE = function(r){
   </div>
 </section>
 
-<section class="sec sec--grid" id="fioul">
+<section class="sec sec--rings" id="fioul">
   <div class="wrap split">
     <div class="sec__head">
       <h2>Vous chauffez au fioul&nbsp;?</h2>
@@ -288,6 +290,6 @@ window.MCP_PRIORITE = function(r){
 </footer>
 
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Simuler mes aides</a></div>
-<script src="../assets/app.js?v=202610281548" defer></script>
+<script src="../assets/app.js?v=202610291602" defer></script>
 </body>
 </html>

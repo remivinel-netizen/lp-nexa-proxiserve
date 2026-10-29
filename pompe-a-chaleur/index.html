@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610281548">
+<link rel="preload" as="image" href="../img/hero-conseil-1600.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/style.css?v=202610291602">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -20,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610281548"></script>
+<script src="../assets/config.js?v=202610291602"></script>
 <script>
 /* Priorité du lead, transmise avec le payload (chaud / tiède / froid). */
 window.MCP_PRIORITE = function(r){
@@ -48,7 +49,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-conseil-1600.webp 1600w, ../img/hero-conseil-1000.webp 1000w, ../img/hero-conseil-640.webp 640w"><img src="../img/hero-conseil-1600.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="lames lames--haut" style="right:70px" aria-hidden="true"><span style="height:220px"></span><span style="height:260px"></span><span style="height:200px"></span><span style="height:240px"></span></div><div class="lames lames--bas" style="right:-20px" aria-hidden="true"><span style="height:180px"></span><span style="height:230px"></span><span style="height:200px"></span></div><div class="lame-rouge" style="right:300px;bottom:50px" aria-hidden="true"></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
@@ -185,7 +187,7 @@ window.MCP_PRIORITE = function(r){
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Accompagnement sur les dossiers.</b> MaPrimeRénov', CEE&nbsp;: vous n'êtes pas seul face aux formulaires.</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Bilan énergétique offert</b> pendant l'étude chez vous, pour chiffrer les économies.</span></li>
               </ul>
-      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="aides">Calculer mon reste à charge</a><small>Visite et étude gratuites</small></div>
+      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="aides">Calculer mon reste à charge</a></div>
     </div>
     <div class="devis" aria-label="Exemple de structure du devis">
       <div class="devis__head"><b>Votre devis Proxiserve</b></div>
@@ -236,15 +238,15 @@ window.MCP_PRIORITE = function(r){
       <p>Vous décidez après l'étude, avec le devis complet.</p>
     </div>
     <div class="split split--photo">
-    <figure class="photo photo--portrait" style="margin:0"><picture><source type="image/webp" srcset="../img/technicien-pac-840.webp"><img src="../img/technicien-pac-840.jpg" alt="Technicien mettant en service l'unité intérieure d'une pompe à chaleur dans une buanderie" loading="lazy" decoding="async" width="840"></picture><figcaption class="photo__cap">Mise en service de l'unité intérieure, raccordée à votre circuit de chauffage existant.</figcaption></figure>
+    <figure class="photo photo--portrait" style="margin:0"><picture><source type="image/webp" srcset="../img/technicien-pac-840.webp"><img src="../img/technicien-pac-840.jpg" alt="Technicien mettant en service l'unité intérieure d'une pompe à chaleur dans une buanderie" loading="lazy" decoding="async" width="840"></picture></figure>
     <ol class="steps steps--2">
       <li><h3>Un conseiller vous rappelle</h3><p>Il vérifie votre logement, votre chauffage actuel et vos attentes, puis vous propose un créneau de visite.</p><span class="dur">Aux horaires ouvrés</span></li>
-      <li class="is-key"><h3>Étude chez vous</h3><p>Étude thermique, repérage acoustique, emplacement de l'unité extérieure. Le bilan énergétique est offert.</p><span class="dur">1 h 30, gratuite</span></li>
+      <li><h3>Étude chez vous</h3><p>Étude thermique, repérage acoustique, emplacement de l'unité extérieure. Le bilan énergétique est offert.</p><span class="dur">1 h 30, gratuite</span></li>
       <li><h3>Devis avec les aides déduites</h3><p>Vous recevez un devis où MaPrimeRénov' et la prime CEE sont déjà retirées. Vous êtes accompagné sur les dossiers.</p><span class="dur">Reste à charge finançable à 0 %</span></li>
       <li><h3>Installation et mise en service</h3><p>Les techniciens de votre agence posent la pompe à chaleur et la mettent en route avec vous.</p><span class="dur">Après validation du devis</span></li>
     </ol>
     </div>
-    <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="etapes">Demander mon étude gratuite</a><small>Sans engagement</small></div>
+    <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="etapes">Demander mon étude gratuite</a></div>
   </div>
 </section>
 
@@ -307,6 +309,6 @@ window.MCP_PRIORITE = function(r){
 </footer>
 
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Recevoir mon étude gratuite</a></div>
-<script src="../assets/app.js?v=202610281548" defer></script>
+<script src="../assets/app.js?v=202610291602" defer></script>
 </body>
 </html>

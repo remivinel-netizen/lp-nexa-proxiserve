@@ -9,7 +9,8 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610281548">
+<link rel="preload" as="image" href="../img/hero-depannage-840.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="../assets/style.css?v=202610291602">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -20,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610281548"></script>
+<script src="../assets/config.js?v=202610291602"></script>
 <script>
 window.MCP_PRIORITE = function(r){
   if (r.panne === 'Plus de chauffage' || r.panne === 'Fuite ou odeur') return 'chaud';
@@ -45,7 +46,8 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero">
+<section class="hero hero--photo">
+  <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-depannage-840.webp 840w, ../img/hero-depannage-640.webp 640w"><img src="../img/hero-depannage-840.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="lames lames--bas" style="right:-20px;bottom:-80px" aria-hidden="true"><span style="height:200px"></span><span style="height:250px"></span><span style="height:220px"></span></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
@@ -156,16 +158,16 @@ window.MCP_PRIORITE = function(r){
       <p>Du premier appel à la remise en route, vous savez à chaque étape ce qui se passe.</p>
     </div>
     <ol class="steps">
-      <li class="is-key"><h3>Vous décrivez la panne</h3><p>Par téléphone ou via le formulaire. Le conseiller vérifie votre zone, votre appareil et l'urgence.</p><span class="dur">Aux horaires ouvrés</span></li>
+      <li><h3>Vous décrivez la panne</h3><p>Par téléphone ou via le formulaire. Le conseiller vérifie votre zone, votre appareil et l'urgence.</p><span class="dur">Aux horaires ouvrés</span></li>
       <li><h3>On fixe le passage</h3><p>Un créneau est posé avec le technicien de l'agence la plus proche.</p><span class="dur">Créneau confirmé par téléphone</span></li>
       <li><h3>Diagnostic et devis sur place</h3><p>Le technicien identifie l'origine de la panne et vous propose un devis avant toute réparation.</p><span class="dur">Vous décidez</span></li>
       <li><h3>Réparation</h3><p>Le technicien répare avec les pièces disponibles. Si une pièce doit être commandée, un second passage est planifié.</p><span class="dur">Remise en route</span></li>
     </ol>
-    <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="etapes">Demander un dépannage</a><small>Un conseiller vous rappelle</small></div>
+    <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="etapes">Demander un dépannage</a></div>
   </div>
 </section>
 
-<section class="sec sec--blocs" id="apres">
+<section class="sec sec--dots" id="apres">
   <div class="wrap split">
     <div class="sec__head">
       <h2>Et après la panne</h2>
@@ -208,12 +210,13 @@ window.MCP_PRIORITE = function(r){
   </div>
 </section>
 
-<section class="final final--navy">
+<section class="final final--lames">
+  <div class="lames lames--haut" style="" aria-hidden="true"><span style="height:170px"></span><span style="height:200px"></span><span style="height:150px"></span></div><div class="lames lames--bas" style="" aria-hidden="true"><span style="height:160px"></span><span style="height:200px"></span><span style="height:140px"></span><span style="height:180px"></span></div>
   <div class="wrap">
     <div class="final__box">
       <h2>Votre chauffage remis en route par un technicien proche</h2>
       <p>Trois questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
-      <a class="btn btn--red btn--lg" href="#devis" data-go="final">Demander un dépannage</a>
+      <a class="btn btn--white btn--lg" href="#devis" data-go="final">Demander un dépannage</a>
     </div>
   </div>
 </section>
@@ -233,6 +236,6 @@ window.MCP_PRIORITE = function(r){
 </footer>
 
 <div class="sticky sticky--2" id="sticky"><a class="btn btn--navy" href="#devis" data-tel="sticky" data-tel-fallback="Être rappelé"><svg class="ico"><use href="../assets/icons.svg#i-phone"/></svg><span data-tel-num>Être rappelé</span></a><a class="btn btn--red" href="#devis" data-go="sticky">Décrire ma panne</a></div>
-<script src="../assets/app.js?v=202610281548" defer></script>
+<script src="../assets/app.js?v=202610291602" defer></script>
 </body>
 </html>

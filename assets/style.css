@@ -104,6 +104,13 @@ p{margin:0}
   .hero__call .btn{width:auto}
 }
 
+/* ---------- photo de fond du héros ---------- */
+.hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(24,69,98,.97) 0%,rgba(24,69,98,.9) 45%,rgba(24,69,98,.55) 100%)}
+@media (min-width:900px){.hero__bg::after{background:linear-gradient(100deg,rgba(24,69,98,.98) 0%,rgba(24,69,98,.94) 38%,rgba(24,69,98,.45) 60%,rgba(24,69,98,.2) 100%)}}
+.hero--photo .lames,.hero--photo .lame-rouge{display:none}
+
 /* ---------- fonds DA « lames de radiateur » ---------- */
 .lames{position:absolute;display:flex;gap:14px;pointer-events:none;z-index:0}
 .lames span{display:block;width:28px;border-radius:999px;background:var(--lame)}
@@ -248,15 +255,18 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .grid{display:grid;gap:18px}
 @media (min-width:700px){.grid--2{grid-template-columns:1fr 1fr}.grid--3{grid-template-columns:repeat(3,1fr)}.grid--4{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1000px){.grid--4{grid-template-columns:repeat(4,1fr)}}
-.card{background:var(--sky-pale);border-radius:var(--r-card);padding:26px 24px;border:1px solid rgba(24,69,98,.10)}
+.card{background:var(--sky-pale);border-radius:var(--r-card);padding:24px;border:1px solid rgba(24,69,98,.10);display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+.card > *{grid-column:1/-1}
+.card .b{grid-column:1;margin:0}
+.card .b + h3{grid-column:2;margin:0}
 .card--tint{border:0}
 .card--sky{background:var(--sky-pale)} .card--green{background:var(--green-pale)} .card--orange{background:var(--orange-pale)} .card--red{background:var(--red-pale)} .card--navy{background:rgba(255,255,255,.06);color:#fff;position:relative;z-index:1}
-.card .b{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--navy);margin-bottom:16px;border:0}
+.card .b{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--navy);border:0}
 .card--navy .b{background:rgba(255,255,255,.12);border-color:transparent;color:#fff}
 .card .big{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--navy)}
 .card .big small{font-size:18px;font-weight:500;letter-spacing:0;margin-left:4px}
-.card h3{margin-top:8px}
-.card p{margin-top:8px;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
+.card h3{margin-top:0}
+.card p{margin-top:12px;font-size:15.5px;line-height:1.5;color:var(--ink-2)}
 .card--navy p{color:rgba(255,255,255,.8)}
 .card--tint p{color:var(--ink-2)}
 .card.card--navy h3,.card.card--navy .big{color:#fff}
@@ -293,22 +303,29 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .devis__row b{white-space:nowrap;font-size:18px;letter-spacing:-.01em}
 .devis__row--aide b{color:var(--green-deep)}
 .devis__total{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 0;font-size:17px;font-weight:700;color:var(--navy)}
-.devis__total b{font-size:24px;letter-spacing:-.02em;text-align:right}
-@media (max-width:479px){.devis__total{font-size:16px}.devis__total b{font-size:19px}}
+.devis__total b{font-size:18px;letter-spacing:-.01em;text-align:right}
+@media (max-width:479px){.devis__total{font-size:16px}.devis__total b{font-size:17px}}
 .devis__note{margin-top:14px;font-size:12.5px;line-height:1.4;color:var(--ink-3)}
 .devis__tag{display:inline-block;padding:5px 10px;border-radius:999px;background:var(--green-pale);color:var(--green-deep);font-size:12.5px;font-weight:700}
-.split{display:grid;gap:36px;align-items:start}
+.split{display:grid;gap:36px;align-items:stretch}
+/* la photo ne fixe jamais la hauteur : elle remplit celle de la colonne d'en face */
+.split > .photo,.split > div > .photo--marge{position:relative;aspect-ratio:auto;min-height:260px}
+.split > .photo img,.split > div > .photo--marge img{position:absolute;inset:0;width:100%;height:100%}
+.split > div{display:flex;flex-direction:column}
+.split > .ticks{align-content:start}
+.split > div > .photo--marge{flex:1}
 @media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:64px}.split--rev > :first-child{order:2}}
 .split .sec__head{margin-bottom:0}
 
 /* photo de section */
 .photo{border-radius:var(--r-card);overflow:hidden;box-shadow:0 30px 60px -40px rgba(24,69,98,.5);background:var(--sky-pale)}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo{display:flex;flex-direction:column}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;flex:1;min-height:0}
 .photo--portrait{aspect-ratio:4/5;max-width:460px}
 .photo--landscape{aspect-ratio:16/10}
 .photo--marge{margin-top:24px!important}
 .photo__cap{display:block;padding:12px 16px;font-size:13.5px;color:var(--ink-2);background:#fff;border-top:1px solid var(--line)}
-.split--photo{align-items:center}
+.split--photo{align-items:stretch}
 
 /* fiche produit */
 .spec{display:grid;gap:14px}
