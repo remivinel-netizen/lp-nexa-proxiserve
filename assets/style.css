@@ -140,7 +140,8 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .sec--thermo{background:#fff}
 .deco--thermo{position:absolute;right:-160px;bottom:-200px;width:440px;height:440px;pointer-events:none}
 .deco--thermo .piste{stroke:#EEF2F5}
-.deco--thermo .chaleur{stroke:var(--red)}
+.deco--thermo .chaleur{stroke:var(--red);transform-origin:220px 220px;animation:thermo 14s linear infinite}
+@keyframes thermo{from{transform:rotate(215deg)}to{transform:rotate(575deg)}}
 .sec--navy.sec--thermo{background:var(--navy)}
 .sec--navy .deco--thermo{right:-110px;top:50%;bottom:auto;margin-top:-230px;width:460px;height:460px}
 .sec--navy .deco--thermo .piste{stroke:var(--lame)}
