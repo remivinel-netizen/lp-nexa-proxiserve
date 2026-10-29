@@ -29,7 +29,7 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 1. **Numéro de call tracking** : `tel` dans `assets/config.js`. Tant qu'il est vide, les boutons d'appel renvoient vers le formulaire et affichent « Être rappelé ».
 2. **Webhook des leads** : `endpoint` dans `assets/config.js`, ou `data-endpoint` sur le `<form>` de chaque page. Tant que la valeur contient `REMPLACER`, l'envoi est simulé et le payload s'affiche dans la console.
 3. **GTM** : décommenter le snippet dans le `<head>` de chaque page et remplacer `GTM-XXXXXXX`.
-4. **Bandeau cookies IwlCMP** : créer un site dans le CMP, remplacer `data-site-id="REMPLACER"` et décommenter.
+4. **Bandeau cookies IwlCMP** : en place, site `r6dadsb7` (domaine autorisé : remivinel-netizen.github.io). Ajouter le domaine définitif dans l'admin du CMP au moment du changement d'hébergement.
 5. **Montant des aides** : 10 900 € est affiché (angle de la proposition Nexa). À confirmer avec Nexa (10 800 ou 10 900). Chercher `10&nbsp;900` dans les pages PAC et simulateur.
 6. **Mentions légales et confidentialité** : compléter les crochets (raison sociale, RCS, RGE, médiateur, organisme prêteur, DPO).
 7. **Photos** : dans les sections uniquement (`.photo`), pas dans les héros (choix de la DA). Sources : proxiserve.fr et proxiserve.fr/monchauffagisteprive (techniciens, pompe à chaleur), plus deux images générées avec Higgsfield (technicien PAC, chaudière neuve). Faire confirmer par Nexa que Proxiserve détient les droits des photos du site pour un usage publicitaire.
