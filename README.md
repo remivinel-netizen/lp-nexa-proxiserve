@@ -31,7 +31,7 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 3. **GTM** : décommenter le snippet dans le `<head>` de chaque page et remplacer `GTM-XXXXXXX`.
 4. **Bandeau cookies IwlCMP** : en place, site `r6dadsb7` (domaine autorisé : remivinel-netizen.github.io). Ajouter le domaine définitif dans l'admin du CMP au moment du changement d'hébergement.
 5. **Montant des aides** : 10 900 € est affiché (angle de la proposition Nexa). À confirmer avec Nexa (10 800 ou 10 900). Chercher `10&nbsp;900` dans les pages PAC et simulateur.
-6. **Mentions légales et confidentialité** : compléter les crochets (raison sociale, RCS, RGE, médiateur, organisme prêteur, DPO).
+6. **Mentions légales et confidentialité** : remplies avec les mentions légales de proxiserve.fr (Proxiserve Holding / Proxiserve SA, Levallois-Perret, médiateur C&C Médiation). Restent à compléter : numéro RGE et organisme prêteur du financement 0 %.
 7. **Photos** : dans les sections uniquement (`.photo`), pas dans les héros (choix de la DA). Sources : proxiserve.fr et proxiserve.fr/monchauffagisteprive (techniciens, pompe à chaleur), plus deux images générées avec Higgsfield (technicien PAC, chaudière neuve). Faire confirmer par Nexa que Proxiserve détient les droits des photos du site pour un usage publicitaire.
 8. **Polices** : Roboto chargé depuis Google Fonts. À auto-héberger avant le Go Live si on veut la même rigueur que mon-bilan-solaire.
 9. **Hébergement** : GitHub Pages expose l'URL `remivinel-netizen.github.io`, visible dans la barre d'adresse. Prévoir un domaine (type monchauffagisteprive.fr) ou un Worker Cloudflare avant diffusion, comme pour les autres landings.
