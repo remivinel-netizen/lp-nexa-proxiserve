@@ -163,7 +163,9 @@
   function $(sel, root){ return (root || document).querySelector(sel); }
   function val(name){ var el = form.elements[name]; return el ? (el.value || '').trim() : ''; }
   function checked(name){ var el = form.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
-  function setHeight(){ view.style.height = steps[cur].offsetHeight + 'px'; }
+  /* +2 px : la hauteur mesurée est arrondie, sans marge le trait du bas de la
+     dernière option se retrouve coupé. */
+  function setHeight(){ view.style.height = (steps[cur].offsetHeight + 2) + 'px'; }
   function paint(){
     for (var i = 0; i < segs.length; i++) segs[i].classList.toggle('on', i <= cur);
     back.hidden = cur === 0;
