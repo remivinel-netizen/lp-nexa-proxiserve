@@ -261,16 +261,27 @@
     if (cur === steps.length - 1) { submit(); return; }
     go(cur + 1);
   }
+  /* Une réponse à choix unique fait avancer d'elle-même. Après un retour en
+     arrière, la réponse est déjà cochée : cliquer dessus ne déclenche plus
+     « change », on écoute donc aussi le clic. Le garde-fou évite d'avancer
+     deux fois quand les deux événements partent pour un même clic. */
+  var dernierPas = 0;
+  function avance(){ var now = Date.now(); if (now - dernierPas < 300) return; dernierPas = now; setTimeout(next, 180); }
   form.addEventListener('change', function(e){
     var t = e.target;
     if (t.type === 'radio'){
       if (!started) { started = true; track('quiz_start', {first_answer: t.value}); }
       var st = t.closest('.step');
-      if (st === steps[cur] && (st.getAttribute('data-kind') || 'radio') === 'radio') setTimeout(next, 180);
+      if (st === steps[cur] && (st.getAttribute('data-kind') || 'radio') === 'radio') avance();
     }
   });
   form.addEventListener('click', function(e){
-    var b = e.target.closest('[data-next]'); if (b) { e.preventDefault(); next(); }
+    var b = e.target.closest('[data-next]'); if (b) { e.preventDefault(); next(); return; }
+    var t = e.target;
+    if (t.type === 'radio' && t.checked){
+      var st = t.closest('.step');
+      if (st === steps[cur] && (st.getAttribute('data-kind') || 'radio') === 'radio') avance();
+    }
   });
   form.addEventListener('submit', function(e){ e.preventDefault(); next(); });
   form.addEventListener('keydown', function(e){
