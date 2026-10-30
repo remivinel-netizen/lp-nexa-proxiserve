@@ -158,6 +158,12 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .sec--navy.sec--blocs::after{background:var(--red)}
 @media (max-width:899px){.sec--grid::before,.sec--grid::after,.sec--blocs::after{display:none}.deco--thermo{width:300px;height:300px;right:-120px;bottom:-140px}}
 
+/* ---------- labels (PG, RGE Qualibat, RGE) sous les chiffres du héros ---------- */
+.labels{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.labels span{display:inline-flex;align-items:center;height:48px;padding:6px 12px;border-radius:12px;background:#fff}
+.labels img{height:36px;width:auto}
+.labels img[alt^="RGE,"]{height:26px}
+
 /* ---------- questionnaire ---------- */
 .quiz{background:#fff;color:var(--ink);border-radius:var(--r-card);padding:22px 22px 24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);position:relative}
 .quiz__title{font-size:20px;font-weight:700;color:var(--navy);letter-spacing:-.01em;margin:0 0 2px}

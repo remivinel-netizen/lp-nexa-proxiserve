@@ -40,6 +40,10 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 
 Aucun texte ni chiffre inventé. Tout vient de la feuille de route, du contrat, de la proposition Nexa, de la fiche Atlantic ou du site Proxiserve. Les seuls éléments issus de règles publiques : obligation d'entretien annuel (décret 2009-649), attestation remise sous 15 jours, TVA à 5,5 % (affichée aussi sur le site MonChauffagistePrivé), fin des chaudières fioul neuves depuis juillet 2022, numéro Urgence Sécurité Gaz, répartition locataire / propriétaire pour l'entretien.
 
+## Labels
+
+Sous les chiffres du héros (`.labels`) : Professionnel du Gaz, RGE Qualibat, RGE. Logos repris du site MonChauffagistePrivé (`img/label-*.png`). La qualification RGE Qualibat est attribuée par agence : à confirmer par Nexa pour les agences Hauts-de-France et Grand Est.
+
 ## Badge Avis Vérifiés
 
 Badge collant en bas à droite (`.avis`) avec la note de proxiserve.fr sur Avis Vérifiés, relevée le 29 octobre 2026 : 4,4 / 5 sur 6 411 avis des 12 derniers mois. Lien vers la page publique. À remplacer par le widget officiel Avis Vérifiés de Proxiserve dès que Nexa fournit le code (comme sur mon-bilan-solaire avec Skeepers), ou mettre les chiffres à jour chaque mois.
