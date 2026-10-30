@@ -160,9 +160,9 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 
 /* ---------- labels (PG, RGE Qualibat, RGE) sous les chiffres du héros ---------- */
 .labels{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.labels span{display:inline-flex;align-items:center;height:48px;padding:6px 12px;border-radius:12px;background:#fff}
-.labels img{height:36px;width:auto}
-.labels img[alt^="RGE,"]{height:26px}
+.labels span{display:inline-flex;align-items:center;height:64px;padding:8px 16px;border-radius:14px;background:#fff}
+.labels img{height:48px;width:auto}
+.labels img[alt^="RGE,"]{height:34px}
 
 /* ---------- questionnaire ---------- */
 .quiz{background:#fff;color:var(--ink);border-radius:var(--r-card);padding:22px 22px 24px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);position:relative}
