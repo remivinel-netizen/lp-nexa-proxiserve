@@ -10,7 +10,7 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
 <link rel="preload" as="image" href="../img/hero-technicien-ext-1240.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="../assets/style.css?v=202610301623">
+<link rel="stylesheet" href="../assets/style.css?v=202610301626">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -21,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610301623"></script>
+<script src="../assets/config.js?v=202610301626"></script>
 <script>
 window.MCP_PRIORITE = function(r){
   var chauffe = r.chauffage === 'Fioul' || r.chauffage === 'Gaz' || r.chauffage === 'Électrique';
@@ -53,9 +53,9 @@ window.MCP_PRIORITE = function(r){
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <h1 class="ent e1">Pompe à chaleur&nbsp;: à combien d'aides <em><span style="white-space:nowrap">avez-vous</span> droit</em>&nbsp;?</h1>
-      <p class="hero__lead ent e2">MaPrimeRénov' et la prime CEE peuvent couvrir jusqu'à 10&nbsp;900&nbsp;€ d'une installation<a href="#notes" aria-label="Voir les conditions">*</a>. Le montant dépend de votre logement, de votre chauffage actuel et de vos revenus. Six questions, et vous savez où vous en êtes.</p>
+      <p class="hero__lead ent e2">MaPrimeRénov' et la prime CEE peuvent couvrir jusqu'à 10&nbsp;900&nbsp;€ d'une installation<a href="#notes" aria-label="Voir les conditions">*</a>. Le montant dépend de votre logement, de votre chauffage actuel et de vos revenus. Sept questions, et vous savez où vous en êtes.</p>
       <ul class="hero__ticks ent e3">
-        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Aides déduites directement du devis, accompagnement sur les dossiers</span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Aides déduites directement du devis</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Aides réservées aux logements de plus de 15&nbsp;ans</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Reste à charge finançable à taux 0&nbsp;%</span></li>
       </ul>
@@ -104,7 +104,7 @@ window.MCP_PRIORITE = function(r){
 
           <fieldset class="step" data-step="annee">
             <legend class="step__q" tabindex="-1">Votre logement a&hellip;</legend>
-            <p class="step__hint">C'est la condition d'accès aux aides&nbsp;: plus de 15&nbsp;ans.</p>
+            <p class="step__hint">Indiquez l'âge approximatif de votre logement.</p>
             <div class="opts">
               <label class="opt"><input type="radio" name="annee" value="Plus de 15 ans"><span class="opt__ico c-green"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg></span><span class="opt__txt">Plus de 15&nbsp;ans<small>construit avant 2011</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
               <label class="opt"><input type="radio" name="annee" value="Moins de 15 ans" data-bloque="logement_recent"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></span><span class="opt__txt">Moins de 15&nbsp;ans</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
@@ -113,7 +113,7 @@ window.MCP_PRIORITE = function(r){
 
           <fieldset class="step" data-step="chauffage">
             <legend class="step__q" tabindex="-1">Vous vous chauffez aujourd'hui&hellip;</legend>
-            <p class="step__hint">Les primes sont les plus élevées quand la pompe à chaleur remplace du fioul ou du gaz.</p>
+            <p class="step__hint">Le montant des primes dépend de l'énergie remplacée.</p>
             <div class="opts opts--2">
               <label class="opt"><input type="radio" name="chauffage" value="Fioul"><span class="opt__ico c-orange"><svg class="ico"><use href="../assets/icons.svg#i-fuel"/></svg></span><span class="opt__txt">Au fioul</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
               <label class="opt"><input type="radio" name="chauffage" value="Gaz"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-flame"/></svg></span><span class="opt__txt">Au gaz</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
@@ -158,7 +158,7 @@ window.MCP_PRIORITE = function(r){
 
           <fieldset class="step" data-step="identite" data-kind="identite">
             <legend class="step__q" tabindex="-1">À qui envoyer le résultat&nbsp;?</legend>
-            <p class="step__hint">Un conseiller Proxiserve vous confirme les aides applicables et répond à vos questions.</p>
+            <p class="step__hint">Un conseiller Proxiserve vous rappelle avec le résultat.</p>
             <div class="group group--2">
               <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" type="text" autocomplete="given-name" autocapitalize="words" placeholder="Camille"></div>
               <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="family-name" autocapitalize="words" placeholder="Martin"></div>
@@ -192,7 +192,7 @@ window.MCP_PRIORITE = function(r){
     </div>
     <div class="grid grid--3">
       <div class="card card--tint card--green"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-euro"/></svg></div><h3>MaPrimeRénov'</h3><p>L'aide de l'État, versée par l'Anah. Son montant dépend de vos revenus&nbsp;: plus ils sont modestes, plus la prime est élevée.</p></div>
-      <div class="card card--tint card--sky"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-leaf"/></svg></div><h3>La prime CEE</h3><p>Les certificats d'économies d'énergie, financés par les fournisseurs d'énergie. Plus importante quand vous remplacez du fioul ou du gaz.</p></div>
+      <div class="card card--tint card--sky"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-leaf"/></svg></div><h3>La prime CEE</h3><p>Les certificats d'économies d'énergie, financés par les fournisseurs d'énergie.</p></div>
       <div class="card card--tint card--orange"><div class="b"><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg></div><h3>La TVA réduite</h3><p>La fourniture et la pose sont facturées à 5,5&nbsp;% au lieu de 20&nbsp;% dans un logement de plus de deux ans.</p></div>
     </div>
   </div>
@@ -205,7 +205,7 @@ window.MCP_PRIORITE = function(r){
       <p>MaPrimeRénov' et la prime CEE figurent en déduction sur le devis, et vous êtes accompagné sur les dossiers. Vous ne signez que pour votre reste à charge.</p>
       <ul class="ticks" style="margin-top:26px">
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Étude gratuite chez vous</b>, avec bilan énergétique offert.</span></li>
-        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Pompe à chaleur Atlantic Alfea Excellia S</b>, fabriquée en France, 65&nbsp;°C maintenus par −15&nbsp;°C.</span></li>
+        <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Pompe à chaleur Atlantic Alfea Excellia S</b>, conçue pour la rénovation.</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Installation par les techniciens</b> de votre agence Proxiserve.</span></li>
       </ul>
       <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="devis">Simuler mes aides</a></div>
@@ -216,7 +216,6 @@ window.MCP_PRIORITE = function(r){
       <div class="devis__row devis__row--aide"><span>MaPrimeRénov'<small>selon vos revenus et votre logement</small></span><b>déduite</b></div>
       <div class="devis__row devis__row--aide"><span>Prime CEE<small>certificats d'économies d'énergie</small></span><b>déduite</b></div>
       <div class="devis__total"><span>Votre reste à charge</span><b>calculé pour vous</b></div>
-      <p class="devis__note"><span class="devis__tag">Jusqu'à 10&nbsp;900&nbsp;€ d'aides*</span><br>Le montant dépend de vos revenus, de votre logement et de votre chauffage actuel. Il est écrit sur le devis.</p>
     </div>
   </div>
 </section>
@@ -272,7 +271,7 @@ window.MCP_PRIORITE = function(r){
   <div class="wrap">
     <div class="final__box">
       <h2>Vos aides, calculées sur votre logement</h2>
-      <p>Six questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
+      <p>Sept questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
       <a class="btn btn--white btn--lg" href="#devis" data-go="final">Simuler mes aides</a>
     </div>
   </div>
@@ -299,6 +298,6 @@ window.MCP_PRIORITE = function(r){
   <span class="avis__txt"><b>Avis Vérifiés</b><span>6 411 avis sur 12 mois</span></span>
 </a>
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Simuler mes aides</a></div>
-<script src="../assets/app.js?v=202610301623" defer></script>
+<script src="../assets/app.js?v=202610301626" defer></script>
 </body>
 </html>
