@@ -40,6 +40,10 @@ Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à
 
 Aucun texte ni chiffre inventé. Tout vient de la feuille de route, du contrat, de la proposition Nexa, de la fiche Atlantic ou du site Proxiserve. Les seuls éléments issus de règles publiques : obligation d'entretien annuel (décret 2009-649), attestation remise sous 15 jours, TVA à 5,5 % (affichée aussi sur le site MonChauffagistePrivé), fin des chaudières fioul neuves depuis juillet 2022, numéro Urgence Sécurité Gaz, répartition locataire / propriétaire pour l'entretien.
 
+## Badge Avis Vérifiés
+
+Badge collant en bas à droite (`.avis`) avec la note de proxiserve.fr sur Avis Vérifiés, relevée le 29 octobre 2026 : 4,4 / 5 sur 6 411 avis des 12 derniers mois. Lien vers la page publique. À remplacer par le widget officiel Avis Vérifiés de Proxiserve dès que Nexa fournit le code (comme sur mon-bilan-solaire avec Skeepers), ou mettre les chiffres à jour chaque mois.
+
 ## Payload envoyé
 
 JSON en POST : `source`, `thematique`, `priorite` (chaud / tiède / froid, règle par page dans `window.MCP_PRIORITE`), toutes les réponses du questionnaire (nom du champ = `data-step`), `adresse`, `code_postal`, `commune`, `departement`, `zone` (couverte / hors zone), `prenom`, `nom`, `email`, `telephone`, `telephone_e164`, `consentement_contact`, `consentement_texte`, `consentement_horodatage`, `date_envoi`, `page_url`, `referrer`, `user_agent`, `gclid`, `gbraid`, `wbraid`, `fbclid`, `utm_*`, `premiere_visite`.
