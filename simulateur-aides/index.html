@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Simulateur d'aides pompe à chaleur | MonChauffagistePrivé par Proxiserve</title>
-<meta name="description" content="À combien d'aides avez-vous droit pour une pompe à chaleur ? MaPrimeRénov' et prime CEE, jusqu'à 10 800 €, déduites directement du devis. Simulation en une minute, gratuite et sans engagement.">
+<title>Vérifiez votre éligibilité aux aides pompe à chaleur | MonChauffagistePrivé par Proxiserve</title>
+<meta name="description" content="Vérifiez votre éligibilité aux aides pour une pompe à chaleur : MaPrimeRénov' et prime CEE, jusqu'à 10 800 €. Huit questions, une minute, gratuit et sans engagement. Un conseiller Proxiserve vous rappelle.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
 <link rel="preload" as="image" href="../img/hero-technicien-ext-1240.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="../assets/style.css?v=202611021516">
+<link rel="stylesheet" href="../assets/style.css?v=202611021547">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -21,7 +21,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202611021516"></script>
+<script src="../assets/config.js?v=202611021547"></script>
 <script>
 window.MCP_PRIORITE = function(r){
   var chauffe = r.chauffage === 'Fioul' || r.chauffage === 'Gaz' || r.chauffage === 'Électrique';
@@ -41,7 +41,7 @@ window.MCP_PRIORITE = function(r){
     </a>
     <div class="top__right">
       <a class="top__tel" href="#devis" data-tel="header" data-tel-fallback="Être rappelé"><svg class="ico"><use href="../assets/icons.svg#i-phone"/></svg><span><b data-tel-num>Être rappelé</b><span data-tel-sub>Un conseiller vous rappelle</span></span></a>
-      <a class="btn btn--red" href="#devis" data-go="header">Simuler mes aides</a>
+      <a class="btn btn--red" href="#devis" data-go="header">Vérifier mon éligibilité</a>
     </div>
   </div>
 </header>
@@ -52,8 +52,8 @@ window.MCP_PRIORITE = function(r){
   <div class="lames lames--haut" style="right:20px;top:-70px" aria-hidden="true"><span style="height:200px"></span><span style="height:240px"></span><span style="height:180px"></span><span style="height:220px"></span><span style="height:200px"></span><span style="height:250px"></span><span style="height:190px"></span></div><div class="lames lames--bas" style="left:400px;bottom:-60px" aria-hidden="true"><span style="height:140px"></span><span style="height:110px" class="rouge"></span></div>
   <div class="wrap hero__inner">
     <div class="hero__copy">
-      <h1 class="ent e1">Pompe à chaleur&nbsp;: à combien d'aides <em><span style="white-space:nowrap">avez-vous</span> droit</em>&nbsp;?</h1>
-      <p class="hero__lead ent e2">MaPrimeRénov' et la prime CEE peuvent couvrir jusqu'à 10&nbsp;800&nbsp;€ d'une installation<a href="#notes" aria-label="Voir les conditions">*</a>. Le montant dépend de votre logement, de votre chauffage actuel, de vos revenus et de la taille de votre foyer. Huit questions, et vous savez où vous en êtes.</p>
+      <h1 class="ent e1">Pompe à chaleur&nbsp;: <em>vérifiez votre éligibilité</em> aux aides</h1>
+      <p class="hero__lead ent e2">MaPrimeRénov' et la prime CEE peuvent couvrir jusqu'à 10&nbsp;800&nbsp;€ d'une installation<a href="#notes" aria-label="Voir les conditions">*</a>. Les conditions dépendent de votre logement, de votre chauffage actuel, de vos revenus et de la taille de votre foyer. Huit questions, et vous savez si vous y avez droit.</p>
       <ul class="hero__ticks ent e3">
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>Prime CEE déduite du devis, MaPrimeRénov' versée après les travaux</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span>MaPrimeRénov' dès 15&nbsp;ans de logement, prime CEE dès 2&nbsp;ans</span></li>
@@ -72,7 +72,7 @@ window.MCP_PRIORITE = function(r){
     </div>
 
     <div class="quiz ent e5" id="devis">
-      <p class="quiz__title">Simulez vos aides</p>
+      <p class="quiz__title">Vérifiez votre éligibilité</p>
       <p class="quiz__sub">Une minute, gratuit, sans engagement.</p>
       <div class="quiz__bar">
         <button type="button" class="qbtn" id="q-back" aria-label="Question précédente" hidden><svg class="ico"><use href="../assets/icons.svg#i-chev-l"/></svg></button>
@@ -178,10 +178,10 @@ window.MCP_PRIORITE = function(r){
             </div>
             <label class="consent" id="q-consent-box">
               <span class="switch"><input type="checkbox" id="f-consent" name="consentement" value="oui"><span></span></span>
-              <p id="q-consent-text">J'accepte d'être recontacté par téléphone, SMS ou email par Proxiserve et Nexa Consulting pour recevoir ma simulation d'aides et étudier mon projet.</p>
+              <p id="q-consent-text">J'accepte d'être recontacté par téléphone, SMS ou email par Proxiserve et Nexa Consulting pour connaître mon éligibilité aux aides et étudier mon projet.</p>
             </label>
             <p class="note" id="q-id-note" aria-live="polite"></p>
-            <div class="step__actions"><button type="submit" class="btn btn--red btn--lg" id="q-send">Voir mes aides</button></div>
+            <div class="step__actions"><button type="submit" class="btn btn--red btn--lg" id="q-send">Vérifier mon éligibilité</button></div>
           </fieldset>
 
         </div>
@@ -197,7 +197,7 @@ window.MCP_PRIORITE = function(r){
     <div class="split split--photo" style="margin-bottom:36px">
     <div class="sec__head">
       <h2>Trois aides se cumulent pour une pompe à chaleur air/eau</h2>
-      <p>Elles ont chacune leurs conditions. C'est ce que le simulateur vérifie en premier.</p>
+      <p>Elles ont chacune leurs conditions. C'est ce que le questionnaire vérifie en premier.</p>
     </div>
     <figure class="photo photo--landscape" style="margin:0"><picture><source type="image/webp" srcset="../img/client-telephone-600.webp"><img src="../img/client-telephone-600.jpg" alt="Propriétaire consultant son téléphone chez lui" loading="lazy" decoding="async" width="600"></picture></figure>
     </div>
@@ -219,7 +219,7 @@ window.MCP_PRIORITE = function(r){
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Pompe à chaleur Atlantic Alfea Excellia S</b>, conçue pour la rénovation.</span></li>
         <li><svg class="ico"><use href="../assets/icons.svg#i-check"/></svg><span><b>Installation par une entreprise RGE</b>, posée sous 1&nbsp;mois après le devis.</span></li>
       </ul>
-      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="devis">Simuler mes aides</a></div>
+      <div class="cta-line"><a class="btn btn--red" href="#devis" data-go="devis">Vérifier mon éligibilité</a></div>
     </div>
     <div class="devis" aria-label="Exemple de structure du devis">
       <div class="devis__head"><b>Votre devis Proxiserve</b></div>
@@ -268,11 +268,11 @@ window.MCP_PRIORITE = function(r){
       <p>Pour toute autre question, le conseiller vous répond lors du rappel.</p>
     </div>
     <div>
-      <details><summary>Le simulateur donne-t-il un montant exact&nbsp;?</summary><div class="a">Il vérifie que vous remplissez les conditions et situe le niveau d'aides selon votre chauffage actuel, votre logement et votre foyer. Le montant exact dépend de vos revenus et du dimensionnement&nbsp;: il est confirmé par le conseiller, puis figure sur le devis.</div></details>
+      <details><summary>Vais-je connaître le montant de mes aides&nbsp;?</summary><div class="a">Le questionnaire vérifie que vous remplissez les conditions. Le montant dépend de vos revenus et du dimensionnement&nbsp;: le conseiller le calcule avec vous, puis il figure sur le devis.</div></details>
       <details><summary>Mes revenus sont confortables. Ai-je quand même droit à quelque chose&nbsp;?</summary><div class="a">MaPrimeRénov' diminue avec les revenus, mais la prime CEE et la TVA à 5,5&nbsp;% s'appliquent quels que soient vos revenus. Le conseiller fait le calcul avec vous.</div></details>
-      <details><summary>Que se passe-t-il après la simulation&nbsp;?</summary><div class="a">Un conseiller Proxiserve vous rappelle. Si votre projet est éligible, il vous propose une étude gratuite chez vous, puis un devis avec les aides déduites.</div></details>
-      <details><summary>Puis-je simuler pour un appartement&nbsp;?</summary><div class="a">Oui, à condition de disposer d'un emplacement extérieur pour l'unité de la pompe à chaleur. Le conseiller le vérifie avec vous.</div></details>
-      <details><summary>La simulation m'engage-t-elle&nbsp;?</summary><div class="a">Non. Le rappel, l'étude et le devis sont gratuits. Vous décidez une fois le devis en main.</div></details>
+      <details><summary>Que se passe-t-il après le questionnaire&nbsp;?</summary><div class="a">Un conseiller Proxiserve vous rappelle. Si votre projet est éligible, il vous propose une étude gratuite chez vous, puis un devis avec les aides déduites.</div></details>
+      <details><summary>Un appartement est-il éligible&nbsp;?</summary><div class="a">Oui, à condition de disposer d'un emplacement extérieur pour l'unité de la pompe à chaleur. Le conseiller le vérifie avec vous.</div></details>
+      <details><summary>La demande m'engage-t-elle&nbsp;?</summary><div class="a">Non. Le rappel, l'étude et le devis sont gratuits. Vous décidez une fois le devis en main.</div></details>
     </div>
   </div>
 </section>
@@ -281,9 +281,9 @@ window.MCP_PRIORITE = function(r){
   <div class="lames lames--haut" style="" aria-hidden="true"><span style="height:170px"></span><span style="height:200px"></span><span style="height:150px"></span></div><div class="lames lames--bas" style="" aria-hidden="true"><span style="height:160px"></span><span style="height:200px"></span><span style="height:140px"></span><span style="height:180px"></span></div>
   <div class="wrap">
     <div class="final__box">
-      <h2>Vos aides, calculées sur votre logement</h2>
+      <h2>Votre éligibilité, vérifiée sur votre logement</h2>
       <p>Huit questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
-      <a class="btn btn--white btn--lg" href="#devis" data-go="final">Simuler mes aides</a>
+      <a class="btn btn--white btn--lg" href="#devis" data-go="final">Vérifier mon éligibilité</a>
     </div>
   </div>
 </section>
@@ -309,7 +309,7 @@ window.MCP_PRIORITE = function(r){
   <span class="avis__note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>4,4<small style="font-weight:500;font-size:12px;color:var(--ink-3)">/5</small></span>
   <span class="avis__txt"><b>Avis Vérifiés</b><span>6 411 avis sur 12 mois</span></span>
 </a>
-<div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Simuler mes aides</a></div>
-<script src="../assets/app.js?v=202611021516" defer></script>
+<div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Vérifier mon éligibilité</a></div>
+<script src="../assets/app.js?v=202611021547" defer></script>
 </body>
 </html>

@@ -9,7 +9,7 @@ Cinq landings Google Ads / Meta pour le dispositif Nexa x Proxiserve (Hauts-de-F
 | `/pompe-a-chaleur/` | Search PAC, lancement | 9 étapes (dont taille du foyer), locataire écarté, logement < 15 ans écarté sauf chauffage fioul |
 | `/entretien-chaudiere/` | Search Entretien, lancement | 5 étapes, pas de prix affiché |
 | `/depannage-chauffage/` | Search Dépannage (appels), lancement | appel direct + 4 étapes |
-| `/simulateur-aides/` | Meta + Demand Gen | 9 étapes, pré-qualification |
+| `/simulateur-aides/` | Meta + Demand Gen | « Vérifiez votre éligibilité », 9 étapes, pré-qualification sans montant |
 | `/chaudiere-gaz/` | Search Chaudière, remplacement | 6 étapes, à partir de 2 990 €, aucune aide annoncée |
 | `/merci/`, `/merci-hors-zone/`, `/merci-non-eligible/` | pages de remerciement, une conversion distincte chacune | |
 | `/mentions-legales/`, `/confidentialite/` | crochets `[…]` à compléter par Proxiserve | |
