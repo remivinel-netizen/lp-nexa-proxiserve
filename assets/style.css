@@ -107,9 +107,16 @@ p{margin:0}
 /* ---------- photo de fond du héros ---------- */
 .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(24,69,98,.97) 0%,rgba(24,69,98,.9) 45%,rgba(24,69,98,.55) 100%)}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,69,98,.88) 0%,rgba(24,69,98,.72) 55%,rgba(24,69,98,.9) 100%)}
 @media (min-width:900px){.hero__bg::after{background:linear-gradient(100deg,rgba(24,69,98,.98) 0%,rgba(24,69,98,.94) 38%,rgba(24,69,98,.45) 60%,rgba(24,69,98,.2) 100%)}}
 .hero--photo .lames,.hero--photo .lame-rouge{display:none}
+
+/* ---------- bandeau France Rénov' (mention obligatoire, arrêté du 31 juillet 2026) ---------- */
+.renov-strip{background:#fff;border-bottom:1px solid var(--line)}
+.renov-strip .wrap{display:flex;justify-content:center;padding:12px 20px}
+.renov{display:block;max-width:460px;border-radius:10px;overflow:hidden;background:#fff}
+.renov img{display:block;width:100%;height:auto}
+.foot .renov{margin:0 0 20px}
 
 /* ---------- fonds DA « lames de radiateur » ---------- */
 .lames{position:absolute;display:flex;gap:14px;pointer-events:none;z-index:0}

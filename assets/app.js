@@ -245,7 +245,13 @@
   function bloquant(){
     var st = steps[cur];
     var inp = st.querySelector('input:checked');
-    return inp ? (inp.getAttribute('data-bloque') || '') : '';
+    if (!inp) return '';
+    /* data-bloque-sauf="chauffage=Fioul" : la réponse ne ferme pas le parcours
+       si cette autre réponse a été donnée (un logement récent chauffé au fioul
+       reste éligible à MaPrimeRénov'). */
+    var sauf = inp.getAttribute('data-bloque-sauf');
+    if (sauf) { var kv = sauf.split('='); if (checked(kv[0]) === kv[1]) return ''; }
+    return inp.getAttribute('data-bloque') || '';
   }
   function quitte(raison){
     sent = true;

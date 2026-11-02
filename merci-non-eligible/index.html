@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#184562">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
-<link rel="stylesheet" href="../assets/style.css?v=202610301634">
+<link rel="stylesheet" href="../assets/style.css?v=202611021513">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -19,7 +19,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <!-- Google Tag Manager : remplacer GTM-XXXXXXX puis décommenter -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202610301634"></script>
+<script src="../assets/config.js?v=202611021513"></script>
 <style>body{background:var(--sky-mist)}</style>
 </head>
 <body>
@@ -39,14 +39,18 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <div class="carte">
   <div class="done">
     <div class="done__badge" style="background:var(--sky-pale);color:var(--navy)"><svg class="ico"><use href="../assets/icons.svg#i-chat"/></svg></div>
-    <h1>Votre situation ne permet pas de bénéficier des aides</h1>
-    <p class="intro" data-raison="locataire">Les aides à l'installation d'une pompe à chaleur sont réservées aux propriétaires du logement. En tant que locataire, la décision et le financement reviennent à votre propriétaire.</p>
-    <p class="intro" data-raison="logement_recent" hidden>Les aides publiques à la pompe à chaleur ne s'appliquent qu'aux logements de plus de 15 ans. Pour un logement plus récent, le reste à charge serait le prix complet de l'installation.</p>
-    <div class="rappel" data-raison="locataire"><b>Ce que vous pouvez faire :</b> transmettre cette page à votre propriétaire. S'il est intéressé, il peut faire la demande lui-même et les aides seront déduites de son devis.</div>
-    <div class="rappel" data-raison="logement_recent" hidden><b>Ce que vous pouvez faire :</b> une pompe à chaleur reste possible sans aides, et l'entretien ou le dépannage de votre installation actuelle sont ouverts à tous. Les équipes Proxiserve sont là pour ça.</div>
+    <h1 data-raison="locataire">Nous installons chez les propriétaires</h1>
+    <h1 data-raison="logement_recent" hidden>MaPrimeRénov' ne s'applique pas encore à votre logement</h1>
+    <h1 data-raison="logement_social" hidden>Votre entretien passe par votre bailleur</h1>
+    <p class="intro" data-raison="locataire">Le remplacement du chauffage est décidé et financé par le propriétaire du logement. Nous ne pouvons pas traiter votre demande à sa place.</p>
+    <p class="intro" data-raison="logement_recent" hidden>MaPrimeRénov' est réservée aux logements de plus de 15 ans, sauf pour remplacer une chaudière fioul. Pour un logement plus récent, seule la prime CEE peut s'appliquer, dès 2 ans. Le projet reste possible, avec un reste à charge plus élevé.</p>
+    <p class="intro" data-raison="logement_social" hidden>En logement social, l'entretien de la chaudière est le plus souvent compris dans vos charges et organisé par votre bailleur. C'est lui qu'il faut contacter.</p>
+    <div class="rappel" data-raison="locataire"><b>Ce que vous pouvez faire :</b> transmettre cette page à votre propriétaire. S'il est intéressé, il peut faire la demande lui-même.</div>
+    <div class="rappel" data-raison="logement_recent" hidden><b>Ce que vous pouvez faire :</b> vérifier vos aides sur <a href="https://france-renov.gouv.fr" target="_blank" rel="noopener">france-renov.gouv.fr</a>. Les pages ci-dessous restent ouvertes à votre logement.</div>
+    <div class="rappel" data-raison="logement_social" hidden><b>Ce que vous pouvez faire :</b> vérifier votre bail ou votre avis de charges, puis contacter votre bailleur pour la date de la prochaine visite.</div>
     <ol class="timeline" style="margin-top:22px">
       <li><span class="n"><svg class="ico" style="width:16px;height:16px"><use href="../assets/icons.svg#i-wrench"/></svg></span><div><b><a href="../entretien-chaudiere/">Entretien de chaudière</a></b><span>la visite annuelle par un technicien Proxiserve, ouverte aux locataires comme aux propriétaires.</span></div></li>
-      <li><span class="n"><svg class="ico" style="width:16px;height:16px"><use href="../assets/icons.svg#i-phone"/></svg></span><div><b><a href="../depannage-chauffage/">Dépannage chauffage</a></b><span>une panne ? Un technicien de l'agence voisine.</span></div></li>
+      <li><span class="n"><svg class="ico" style="width:16px;height:16px"><use href="../assets/icons.svg#i-phone"/></svg></span><div><b><a href="../depannage-chauffage/">Dépannage chauffage</a></b><span>une panne ? Un technicien Proxiserve près de chez vous.</span></div></li>
     </ol>
   </div>
 </div>
@@ -54,7 +58,7 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 (function(){
   var raison = '';
   try { raison = (JSON.parse(sessionStorage.getItem('mcp_non_eligible') || '{}') || {}).raison || ''; } catch(e){}
-  if (raison === 'logement_recent' || raison === 'locataire'){
+  if (raison === 'logement_recent' || raison === 'locataire' || raison === 'logement_social'){
     Array.prototype.forEach.call(document.querySelectorAll('[data-raison]'), function(el){ el.hidden = el.getAttribute('data-raison') !== raison; });
   }
   (window.dataLayer = window.dataLayer || []).push({event: 'non_eligible_view', raison: raison});
@@ -73,6 +77,6 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
     <p style="margin-top:18px">© <span id="annee">2026</span> MonChauffagistePrivé par Proxiserve</p>
   </div>
 </footer>
-<script src="../assets/app.js?v=202610301634" defer></script>
+<script src="../assets/app.js?v=202611021513" defer></script>
 </body>
 </html>

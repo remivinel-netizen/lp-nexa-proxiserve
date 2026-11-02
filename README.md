@@ -1,20 +1,21 @@
 # Landings MonChauffagistePrivé par Proxiserve
 
-Quatre landings Google Ads / Meta pour le dispositif Nexa x Proxiserve (Hauts-de-France et Grand Est), en marque blanche. Site statique, sans build, hébergé sur GitHub Pages dans un premier temps.
+Cinq landings Google Ads / Meta pour le dispositif Nexa x Proxiserve (Hauts-de-France et Grand Est), en marque blanche. Site statique, sans build, hébergé sur GitHub Pages dans un premier temps.
 
 ## Pages
 
 | URL | Campagne | Formulaire |
 |---|---|---|
-| `/pompe-a-chaleur/` | Search PAC, lancement | 8 étapes, locataire et logement < 15 ans écartés |
+| `/pompe-a-chaleur/` | Search PAC, lancement | 9 étapes (dont taille du foyer), locataire écarté, logement < 15 ans écarté sauf chauffage fioul |
 | `/entretien-chaudiere/` | Search Entretien, lancement | 5 étapes, pas de prix affiché |
 | `/depannage-chauffage/` | Search Dépannage (appels), lancement | appel direct + 4 étapes |
-| `/simulateur-aides/` | Meta + Demand Gen | 8 étapes, pré-qualification |
+| `/simulateur-aides/` | Meta + Demand Gen | 9 étapes, pré-qualification |
+| `/chaudiere-gaz/` | Search Chaudière, remplacement | 6 étapes, à partir de 2 990 €, aucune aide annoncée |
 | `/merci/`, `/merci-hors-zone/`, `/merci-non-eligible/` | pages de remerciement, une conversion distincte chacune | |
 | `/mentions-legales/`, `/confidentialite/` | crochets `[…]` à compléter par Proxiserve | |
 | `/` | index interne de validation, non indexé | |
 
-Une cinquième landing (chaudière, remplacement) est prévue pour les mois 2 à 3 : même structure que la page PAC, sans mise en avant des aides.
+Les textes sur les aides (MaPrimeRénov', CEE, barèmes) sont à revoir en janvier 2027. Le bandeau France Rénov' (mention obligatoire) est en place sur les pages PAC, simulateur et chaudière.
 
 ## Fichiers
 
