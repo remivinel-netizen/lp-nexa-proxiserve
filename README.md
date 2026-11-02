@@ -15,7 +15,7 @@ Cinq landings Google Ads / Meta pour le dispositif Nexa x Proxiserve (Hauts-de-F
 | `/mentions-legales/`, `/confidentialite/` | crochets `[…]` à compléter par Proxiserve | |
 | `/` | index interne de validation, non indexé | |
 
-Les textes sur les aides (MaPrimeRénov', CEE, barèmes) sont à revoir en janvier 2027. Le bandeau France Rénov' (mention obligatoire) est en place sur les pages PAC, simulateur et chaudière.
+Les textes sur les aides (MaPrimeRénov', CEE, barèmes) sont à revoir en janvier 2027. Le bandeau France Rénov' (mention obligatoire) est dans le pied de page des pages PAC, simulateur et chaudière.
 
 ## Fichiers
 

@@ -112,8 +112,6 @@ p{margin:0}
 .hero--photo .lames,.hero--photo .lame-rouge{display:none}
 
 /* ---------- bandeau France Rénov' (mention obligatoire, arrêté du 31 juillet 2026) ---------- */
-.renov-strip{background:#fff;border-bottom:1px solid var(--line)}
-.renov-strip .wrap{display:flex;justify-content:center;padding:12px 20px}
 .renov{display:block;max-width:460px;border-radius:10px;overflow:hidden;background:#fff}
 .renov img{display:block;width:100%;height:auto}
 .foot .renov{margin:0 0 20px}
