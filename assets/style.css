@@ -107,7 +107,7 @@ p{margin:0}
 /* ---------- photo de fond du héros ---------- */
 .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,69,98,.88) 0%,rgba(24,69,98,.72) 55%,rgba(24,69,98,.9) 100%)}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,69,98,.84) 0%,rgba(24,69,98,.62) 55%,rgba(24,69,98,.88) 100%)}
 @media (min-width:900px){.hero__bg::after{background:linear-gradient(100deg,rgba(24,69,98,.98) 0%,rgba(24,69,98,.94) 38%,rgba(24,69,98,.45) 60%,rgba(24,69,98,.2) 100%)}}
 .hero--photo .lames,.hero--photo .lame-rouge{display:none}
 
@@ -313,6 +313,7 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .devis__row span{color:var(--ink-2)}
 .devis__row small{display:block;font-size:13px;color:var(--ink-3)}
 .devis__row b{white-space:nowrap;font-size:18px;letter-spacing:-.01em}
+.devis__row b.ok{color:var(--green-deep)}
 .devis__row--aide b{color:var(--green-deep)}
 .devis__total{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 0;font-size:17px;font-weight:700;color:var(--navy)}
 .devis__total b{font-size:18px;letter-spacing:-.01em;text-align:right}
