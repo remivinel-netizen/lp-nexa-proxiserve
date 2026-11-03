@@ -376,11 +376,13 @@
     var now = new Date().toISOString();
     var r = reponses();
     var data = {
+      lead_id: 'MCP-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7),
       source: form.getAttribute('data-source') || 'LP MonChauffagistePrivé',
       thematique: THEME,
       priorite: priorite(r)
     };
     for (var k in r) data[k] = r[k];
+    data.reponses_texte = Object.keys(r).map(function(k){ return k + ' : ' + r[k]; }).join(' | ');
     data.code_postal = val('code_postal');
     data.commune = state.commune;
     data.departement = state.departement;
@@ -420,7 +422,7 @@
     sent = true;
     if (sticky) sticky.classList.remove('is-on');
     var dansZone = data.zone === 'couverte';
-    var leadId = 'MCP-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7);
+    var leadId = data.lead_id;
     try {
       sessionStorage.setItem('mcp_lead', JSON.stringify({
         id: leadId, thematique: THEME, prenom: data.prenom, email: data.email,
