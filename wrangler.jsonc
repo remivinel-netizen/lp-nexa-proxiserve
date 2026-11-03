@@ -1,0 +1,17 @@
+{
+  "name": "mon-chauffagiste-prive",
+  // Compte Cloudflare de Nexa (marketing@nexa-consulting.fr).
+  "account_id": "3adf0deab2d22bf634668f23abf13fce",
+  "compatibility_date": "2026-11-03",
+  // Site statique servi par le moteur d'assets. Les URL sont les dossiers
+  // avec barre finale (/pompe-a-chaleur/), comme sur GitHub Pages.
+  "assets": {
+    "directory": "./dist/",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "mon-chauffagiste-prive.fr", "custom_domain": true },
+    { "pattern": "www.mon-chauffagiste-prive.fr", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}
