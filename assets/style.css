@@ -317,6 +317,7 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .devis__row small{display:block;font-size:13px;color:var(--ink-3)}
 .devis__row b{white-space:nowrap;font-size:18px;letter-spacing:-.01em}
 .devis__row b.ok{color:var(--green-deep)}
+.photo figcaption{font-size:13px;color:var(--ink-3);margin-top:8px}
 .devis__row--aide b{color:var(--green-deep)}
 .devis__total{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0 0;font-size:17px;font-weight:700;color:var(--navy)}
 .devis__total b{font-size:18px;letter-spacing:-.01em;text-align:right}
