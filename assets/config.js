@@ -9,7 +9,7 @@ window.MCP_CONFIG = {
      contient REMPLACER, l'envoi est simulé et le payload s'affiche dans la
      console du navigateur. Peut être surchargé page par page via l'attribut
      data-endpoint du formulaire. */
-  endpoint: 'REMPLACER',
+  endpoint: 'https://hook.eu1.make.com/upnqi1pz0opy4hgdwcr0abntcb1hj4hh',
   /* Départements couverts : Hauts-de-France et Grand Est. Un lead hors zone
      part quand même, mais vers une page de remerciement distincte (donc une
      conversion distincte côté Google Ads). */
