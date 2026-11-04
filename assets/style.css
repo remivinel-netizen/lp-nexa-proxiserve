@@ -509,3 +509,13 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 body:has(#sticky.is-on) .avis{bottom:84px}
 @media (min-width:900px){.avis{right:18px;bottom:18px}body:has(#sticky.is-on) .avis{bottom:18px}}
 @media (max-width:379px){.avis{transform:scale(.9);transform-origin:100% 100%}}
+
+/* témoignages (entretien) */
+.temoins{display:grid;gap:16px}
+@media (min-width:760px){.temoins{grid-template-columns:repeat(3,1fr)}}
+.temoin{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;display:flex;flex-direction:column;gap:12px;margin:0}
+.temoin__stars{display:flex;gap:3px;color:#1C6BC1}
+.temoin__stars .ico{width:16px;height:16px;fill:currentColor;stroke:none}
+.temoin blockquote{margin:0;font-size:16px;line-height:1.5;color:var(--ink);flex:1}
+.temoin footer{font-size:13px;color:var(--ink-3)}
+.temoin footer b{color:var(--ink);font-weight:600}
