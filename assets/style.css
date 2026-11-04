@@ -519,3 +519,8 @@ body:has(#sticky.is-on) .avis{bottom:84px}
 .temoin blockquote{margin:0;font-size:16px;line-height:1.5;color:var(--ink);flex:1}
 .temoin footer{font-size:13px;color:var(--ink-3)}
 .temoin footer b{color:var(--ink);font-weight:600}
+.sec--navy .temoin{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+.sec--navy .temoin blockquote{color:#fff}
+.sec--navy .temoin footer{color:rgba(255,255,255,.72)}
+.sec--navy .temoin footer b{color:#fff}
+.sec--navy .temoin__stars{color:var(--sky)}
