@@ -72,7 +72,8 @@
   /* Les boutons d'appel sont écrits dans le HTML avec data-tel. Tant que le
      numéro n'est pas réglé, ils renvoient vers le formulaire et affichent
      « Être rappelé » : pas de numéro bidon sur une page diffusée. */
-  var TEL = (CFG.tel || '').trim();
+  /* data-tel sur <body> : numéro propre à une page (ex. dépannage), sinon celui de la config. */
+  var TEL = (document.body.getAttribute('data-tel') || CFG.tel || '').trim();
   var telDigits = TEL.replace(/\D/g, '');
   var telHref = telDigits ? 'tel:+33' + telDigits.replace(/^0/, '') : '';
   Array.prototype.forEach.call(document.querySelectorAll('[data-tel]'), function(a){
