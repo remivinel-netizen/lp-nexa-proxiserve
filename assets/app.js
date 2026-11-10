@@ -147,7 +147,9 @@
   }
   Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function(a){ a.addEventListener('click', versQuiz); });
   if (quiz && sticky && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(en){ sticky.classList.toggle('is-on', !en[0].isIntersecting && !sent); }, {threshold: 0.1}).observe(quiz);
+    /* Avec un numéro d'appel sur la page, la barre reste visible dès l'arrivée : le numéro doit se voir sans défiler. */
+    var telPage = !!document.body.getAttribute('data-tel');
+    new IntersectionObserver(function(en){ sticky.classList.toggle('is-on', (telPage || !en[0].isIntersecting) && !sent); }, {threshold: 0.1}).observe(quiz);
   }
 
   if (!form) return;
