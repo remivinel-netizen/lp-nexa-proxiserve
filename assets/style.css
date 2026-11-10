@@ -64,8 +64,18 @@ p{margin:0}
 .top__tel span{display:block;font-size:12.5px;color:var(--ink-3)}
 @media (min-width:860px){.top__tel{display:flex}}
 /* Mobile : quand un numéro existe (body[data-tel]), l'icône téléphone reste visible dans l'en-tête, sans le texte. */
-@media (max-width:859px){body[data-tel] .top__tel{display:flex;gap:0}body[data-tel] .top__tel .ico{width:40px;height:40px;padding:9px}body[data-tel] .top__tel > span{display:none}}
-@media (max-width:339px){body[data-tel] .top .btn{display:none}}
+@media (max-width:859px){
+  body[data-tel] .top .wrap{gap:8px}
+  body[data-tel] .top .brand{flex:1 1 auto;min-width:0}
+  body[data-tel] .top .brand__name{font-size:18px}
+  body[data-tel] .top .brand__by{font-size:9px}
+  body[data-tel] .top__right{gap:8px;flex-shrink:0}
+  body[data-tel] .top__tel{display:inline-flex;gap:6px;padding:9px 12px;border-radius:999px;background:var(--red);color:#fff;font-weight:700;font-size:14px;white-space:nowrap}
+  body[data-tel] .top__tel .ico{width:18px;height:18px;padding:0;background:transparent;color:#fff}
+  body[data-tel] .top__tel b{font-size:14px;line-height:1}
+  body[data-tel] .top__tel [data-tel-sub]{display:none}
+  body[data-tel] .top .btn{display:none}
+}
 .top__tel[hidden],.call[hidden],.sticky a[hidden]{display:none!important}
 
 /* ---------- boutons ---------- */
