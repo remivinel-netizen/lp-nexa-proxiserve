@@ -76,7 +76,7 @@
   var TEL = (document.body.getAttribute('data-tel') || CFG.tel || '').trim();
   var telDigits = TEL.replace(/\D/g, '');
   var telHref = telDigits ? 'tel:+33' + telDigits.replace(/^0/, '') : '';
-  Array.prototype.forEach.call(document.querySelectorAll('[data-tel]'), function(a){
+  Array.prototype.forEach.call(document.querySelectorAll('a[data-tel]'), function(a){
     var num = a.querySelector('[data-tel-num]');
     if (telHref){
       a.setAttribute('href', telHref);
