@@ -14,6 +14,6 @@ cp index.html 404.html dist/
 cp -R assets dist/assets
 cp -R img dist/img
 cp -R fonts dist/fonts
-cp _headers dist/_headers
+cp _headers _redirects dist/
 echo "dist/ : $(find dist -type f | wc -l | tr -d ' ') fichiers, $(du -sh dist | cut -f1)"
 exec npx wrangler@latest deploy "$@"
