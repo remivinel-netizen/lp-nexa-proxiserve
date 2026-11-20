@@ -63,6 +63,8 @@ p{margin:0}
 .top__tel b{display:block;font-size:17px;line-height:1.1}
 .top__tel span{display:block;font-size:12.5px;color:var(--ink-3)}
 @media (min-width:860px){.top__tel{display:flex}}
+/* Dépannage : le numéro ne s'affiche pas dans l'en-tête sur ordinateur. Le bouton d'appel reste sur mobile. */
+@media (min-width:860px){.top__tel--mobile{display:none}}
 /* Mobile : quand un numéro existe (body[data-tel]), l'icône téléphone reste visible dans l'en-tête, sans le texte. */
 @media (max-width:859px){
   body[data-tel] .top .wrap{gap:8px}
