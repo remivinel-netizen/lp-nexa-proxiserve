@@ -192,6 +192,7 @@ main.page{background-color:#F4F6F8;background-image:url("data:image/svg+xml,%3Cs
 .quiz__bar{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .qbtn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer;padding:0}
 .qbtn .ico{width:18px;height:18px}
+.qbtn[hidden]{display:none}
 .segs{flex:1;display:flex;gap:5px}
 .segs i{flex:1;height:5px;border-radius:3px;background:var(--sky-pale);transition:background .3s}
 .segs i.on{background:var(--red)}
@@ -537,3 +538,26 @@ body:has(#sticky.is-on) .avis{bottom:84px}
 .sec--navy .temoin footer{color:rgba(255,255,255,.72)}
 .sec--navy .temoin footer b{color:#fff}
 .sec--navy .temoin__stars{color:var(--sky)}
+
+/* ---------- héros : formulaire remonté sur mobile ----------
+   Sur téléphone, le formulaire passe juste après le titre et la phrase
+   d'accroche. Les points, les chiffres et les labels descendent dessous. */
+@media (max-width:899px){
+  .hero--form-haut .hero__inner{gap:0}
+  .hero--form-haut .hero__copy{display:contents}
+  .hero--form-haut .hero__copy h1{order:1}
+  .hero--form-haut .hero__lead{order:2}
+  .hero--form-haut .quiz{order:3;margin-top:22px}
+  .hero--form-haut .hero__ticks{order:4;margin-top:30px}
+  .hero--form-haut .hero__stats{order:5}
+  .hero--form-haut .labels{order:6}
+}
+
+/* ---------- résultat annoncé à la dernière étape ---------- */
+.step--res .step__q::before{content:"";display:inline-block;width:22px;height:22px;margin-right:8px;vertical-align:-4px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/13px no-repeat}
+
+/* ---------- formulaire à l'écran sur mobile : rien ne flotte dessus ---------- */
+.avis{transition:bottom .3s var(--ease),opacity .25s var(--ease),visibility .25s}
+@media (max-width:899px){
+  .quiz-vu .avis{opacity:0;visibility:hidden;pointer-events:none}
+}

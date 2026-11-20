@@ -10,7 +10,7 @@
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/roboto-var.woff2" crossorigin>
 <link rel="preload" as="image" href="../img/hero-pac-1600.webp" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="../assets/style.css?v=202611200946">
+<link rel="stylesheet" href="../assets/style.css?v=202611201007">
 <!-- IwlCMP : consent defaults (doit précéder GTM). data-site-id à créer pour ce site. -->
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
@@ -22,15 +22,28 @@ gtag('set','url_passthrough',true);gtag('set','ads_data_redaction',true);
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NTSQ5FQP');</script>
 <!-- End Google Tag Manager -->
 <script>document.documentElement.className+=' js';</script>
-<script src="../assets/config.js?v=202611200946"></script>
+<script src="../assets/config.js?v=202611201007"></script>
 <script>
 /* Priorité du lead, transmise avec le payload (chaud / tiède / froid). */
 window.MCP_PRIORITE = function(r){
-  var concret = r.delai === 'Dès que possible' || r.delai === 'Dans les 3 mois';
   var chauffe = r.chauffage === 'Fioul' || r.chauffage === 'Gaz' || r.chauffage === 'Électrique';
-  if (r.delai === 'Je me renseigne') return 'froid';
-  if (r.statut === 'Propriétaire' && r.logement === 'Maison' && concret && chauffe) return 'chaud';
+  if (r.statut === 'Propriétaire' && r.logement === 'Maison' && chauffe) return 'chaud';
   return 'tiède';
+};
+/* Résultat annoncé à la dernière étape, selon les réponses. Les conditions
+   reprises sont celles de la page : logement de plus de 15 ans, fioul ou gaz.
+   Dans les autres cas, on reste prudent : le conseiller vérifie. */
+window.MCP_ETAPE = function(nom, r){
+  if (nom !== 'identite') return;
+  var t = document.getElementById('q-res'), d = document.getElementById('q-res-sub');
+  if (!t || !d) return;
+  var ok = r.annee === 'Plus de 15 ans' && (r.chauffage === 'Fioul' || r.chauffage === 'Gaz');
+  t.textContent = ok
+    ? 'Votre logement remplit les conditions de la prime CEE et de MaPrimeRénov\'.'
+    : 'Votre projet peut ouvrir droit à des aides.';
+  d.textContent = ok
+    ? 'Le montant dépend de vos revenus. Le conseiller le calcule avec vous.'
+    : 'Le conseiller vérifie avec vous la prime CEE et MaPrimeRénov\', selon votre logement et vos revenus.';
 };
 </script>
 </head>
@@ -51,7 +64,7 @@ window.MCP_PRIORITE = function(r){
 </header>
 
 <main id="top">
-<section class="hero hero--photo">
+<section class="hero hero--photo hero--form-haut">
   <div class="hero__bg" aria-hidden="true"><picture><source type="image/webp" sizes="100vw" srcset="../img/hero-pac-1600.webp 1600w, ../img/hero-pac-1000.webp 1000w, ../img/hero-pac-640.webp 640w"><img src="../img/hero-pac-1600.jpg" alt="" fetchpriority="high" decoding="async"></picture></div>
   <div class="lames lames--haut" style="right:70px" aria-hidden="true"><span style="height:220px"></span><span style="height:260px"></span><span style="height:200px"></span><span style="height:240px"></span></div><div class="lames lames--bas" style="right:-20px" aria-hidden="true"><span style="height:180px"></span><span style="height:230px"></span><span style="height:200px"></span></div><div class="lame-rouge" style="right:300px;bottom:50px" aria-hidden="true"></div>
   <div class="wrap hero__inner">
@@ -80,9 +93,9 @@ window.MCP_PRIORITE = function(r){
       <p class="quiz__sub">Une minute. Un conseiller vous rappelle.</p>
       <div class="quiz__bar">
         <button type="button" class="qbtn" id="q-back" aria-label="Question précédente" hidden><svg class="ico"><use href="../assets/icons.svg#i-chev-l"/></svg></button>
-        <div class="segs" id="q-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="segs" id="q-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
         <span class="quiz__count" id="q-count">≈ 1 min</span>
-        <span class="sr" id="q-progres" aria-live="polite">Étape 1 sur 9</span>
+        <span class="sr" id="q-progres" aria-live="polite">Étape 1 sur 6</span>
       </div>
 
       <form id="q-form" novalidate data-source="LP Pompe à chaleur" data-thematique="pompe_a_chaleur">
@@ -126,38 +139,8 @@ window.MCP_PRIORITE = function(r){
             </div>
           </fieldset>
 
-          <fieldset class="step" data-step="surface">
-            <legend class="step__q" tabindex="-1">Quelle surface chauffez-vous&nbsp;?</legend>
-            <p class="step__hint">Une estimation suffit. Elle sert à pré-dimensionner la puissance.</p>
-            <div class="opts opts--2">
-              <label class="opt"><input type="radio" name="surface" value="Moins de 80 m²"><span class="opt__txt">Moins de 80&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="surface" value="80 à 120 m²"><span class="opt__txt">80 à 120&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="surface" value="120 à 160 m²"><span class="opt__txt">120 à 160&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="surface" value="Plus de 160 m²"><span class="opt__txt">Plus de 160&nbsp;m²</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-            </div>
-          </fieldset>
 
-          <fieldset class="step" data-step="foyer">
-            <legend class="step__q" tabindex="-1">Combien de personnes vivent chez vous&nbsp;?</legend>
-            <p class="step__hint">Le barème MaPrimeRénov' dépend des revenus et de la taille du foyer.</p>
-            <div class="opts opts--2">
-              <label class="opt"><input type="radio" name="foyer" value="1"><span class="opt__txt">1 personne</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="foyer" value="2"><span class="opt__txt">2 personnes</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="foyer" value="3 ou 4"><span class="opt__txt">3 ou 4 personnes</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="foyer" value="5 et plus"><span class="opt__txt">5 personnes et plus</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-            </div>
-          </fieldset>
 
-          <fieldset class="step" data-step="delai">
-            <legend class="step__q" tabindex="-1">Quand aimeriez-vous installer&nbsp;?</legend>
-            <p class="step__hint">Pour préparer votre étude au bon moment.</p>
-            <div class="opts">
-              <label class="opt"><input type="radio" name="delai" value="Dès que possible"><span class="opt__ico c-red"><svg class="ico"><use href="../assets/icons.svg#i-bolt"/></svg></span><span class="opt__txt">Dès que possible<small>ma chaudière fatigue ou est en panne</small></span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="delai" value="Dans les 3 mois"><span class="opt__ico c-orange"><svg class="ico"><use href="../assets/icons.svg#i-cal"/></svg></span><span class="opt__txt">Dans les 3 prochains mois</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="delai" value="D'ici un an"><span class="opt__ico c-sky"><svg class="ico"><use href="../assets/icons.svg#i-clock"/></svg></span><span class="opt__txt">D'ici un an</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-              <label class="opt"><input type="radio" name="delai" value="Je me renseigne"><span class="opt__ico c-mist"><svg class="ico"><use href="../assets/icons.svg#i-search"/></svg></span><span class="opt__txt">Je me renseigne pour l'instant</span><span class="opt__radio"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label>
-            </div>
-          </fieldset>
 
           <fieldset class="step" data-step="code_postal" data-kind="cp">
             <legend class="step__q" tabindex="-1">Où se trouve votre logement&nbsp;?</legend>
@@ -171,9 +154,9 @@ window.MCP_PRIORITE = function(r){
             <div class="step__actions"><button type="button" class="btn btn--navy" data-next>Continuer</button></div>
           </fieldset>
 
-          <fieldset class="step" data-step="identite" data-kind="identite">
-            <legend class="step__q" tabindex="-1">Qui doit-on rappeler&nbsp;?</legend>
-            <p class="step__hint">Un conseiller Proxiserve vous rappelle.</p>
+          <fieldset class="step step--res" data-step="identite" data-kind="identite">
+            <legend class="step__q" tabindex="-1" id="q-res">Votre projet peut ouvrir droit à des aides.</legend>
+            <p class="step__hint" id="q-res-sub">Le conseiller vérifie avec vous la prime CEE et MaPrimeRénov', selon votre logement et vos revenus.</p>
             <div class="group group--2">
               <div class="field"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" type="text" autocomplete="given-name" autocapitalize="words" placeholder="Camille"></div>
               <div class="field"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="family-name" autocapitalize="words" placeholder="Martin"></div>
@@ -303,7 +286,7 @@ window.MCP_PRIORITE = function(r){
   <div class="wrap">
     <div class="final__box">
       <h2>Votre reste à charge, calculé sur votre logement</h2>
-      <p>Huit questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
+      <p>Cinq questions, une minute. Un conseiller Proxiserve vous rappelle.</p>
       <a class="btn btn--white btn--lg" href="#devis" data-go="final">Recevoir mon étude gratuite</a>
     </div>
   </div>
@@ -331,6 +314,6 @@ window.MCP_PRIORITE = function(r){
   <span class="avis__txt"><b>Avis Vérifiés</b><span>6 411 avis sur 12 mois</span></span>
 </a>
 <div class="sticky" id="sticky"><a class="btn btn--red" href="#devis" data-go="sticky">Recevoir mon étude gratuite</a></div>
-<script src="../assets/app.js?v=202611200946" defer></script>
+<script src="../assets/app.js?v=202611201007" defer></script>
 </body>
 </html>

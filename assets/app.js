@@ -146,10 +146,34 @@
     setTimeout(function(){ try { var q = quiz.querySelector('.step.is-active .step__q'); if (q) q.focus({preventScroll: true}); } catch(e){} }, 500);
   }
   Array.prototype.forEach.call(document.querySelectorAll('[data-go]'), function(a){ a.addEventListener('click', versQuiz); });
+  /* Le bouton flottant « cookies » vit dans le shadow DOM du bandeau de
+     consentement : on y pose une règle qui le masque sur mobile tant que le
+     formulaire est à l'écran. Le bandeau de consentement, lui, n'est jamais
+     masqué. Le bouton revient dès que le formulaire sort de l'écran. */
+  var cmpVu = false;
+  function cmpDiscret(vu){
+    cmpVu = vu;
+    var essais = 0;
+    (function pose(){
+      var h = document.getElementById('iwl-cmp-host');
+      if (!h || !h.shadowRoot) { if (++essais < 40) setTimeout(pose, 250); return; }
+      if (!h.shadowRoot.getElementById('mcp-discret')) {
+        var s = document.createElement('style'); s.id = 'mcp-discret';
+        s.textContent = '@media (max-width:899px){:host([data-quiz-vu]) .iwl-float{opacity:0!important;visibility:hidden!important;pointer-events:none!important}}';
+        h.shadowRoot.appendChild(s);
+      }
+      if (cmpVu) h.setAttribute('data-quiz-vu', ''); else h.removeAttribute('data-quiz-vu');
+    })();
+  }
   if (quiz && sticky && 'IntersectionObserver' in window){
     /* Avec un numéro d'appel sur la page, la barre reste visible dès l'arrivée : le numéro doit se voir sans défiler. */
     var telPage = !!document.body.getAttribute('data-tel');
-    new IntersectionObserver(function(en){ sticky.classList.toggle('is-on', (telPage || !en[0].isIntersecting) && !sent); }, {threshold: 0.1}).observe(quiz);
+    new IntersectionObserver(function(en){
+      sticky.classList.toggle('is-on', (telPage || !en[0].isIntersecting) && !sent);
+      /* Formulaire à l'écran : sur mobile, le badge d'avis et le bouton cookies s'effacent. */
+      document.documentElement.classList.toggle('quiz-vu', en[0].isIntersecting);
+      cmpDiscret(en[0].isIntersecting);
+    }, {threshold: 0.1}).observe(quiz);
   }
 
   if (!form) return;
@@ -190,6 +214,8 @@
     var r = quiz.getBoundingClientRect();
     if (r.top < 0) quiz.scrollIntoView({behavior: 'smooth', block: 'start'});
     track('quiz_step', {step_index: cur + 1, step_name: st.getAttribute('data-step')});
+    /* Crochet de page : permet d'adapter une étape aux réponses déjà données. */
+    if (typeof window.MCP_ETAPE === 'function') { try { window.MCP_ETAPE(st.getAttribute('data-step'), reponses()); setHeight(); } catch(e){} }
   }
   function note(id, msg, isErr){
     var n = document.getElementById(id); if (!n) return;
