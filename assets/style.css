@@ -575,3 +575,4 @@ body:has(#sticky.is-on) .avis{bottom:84px}
 /* Étape coordonnées : à quoi servent les coordonnées. */
 .step__secu{display:flex;align-items:center;gap:7px;margin:-6px 0 14px;font-size:13px;color:var(--ink-3)}
 .step__secu .ico{width:15px;height:15px;color:var(--green);flex-shrink:0}
+.step__q + .step__secu{margin-top:6px}
