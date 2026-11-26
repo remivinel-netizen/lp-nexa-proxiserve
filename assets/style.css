@@ -563,3 +563,15 @@ body:has(#sticky.is-on) .avis{bottom:84px}
 @media (max-width:899px){
   .quiz-vu .avis{opacity:0;visibility:hidden;pointer-events:none}
 }
+
+/* Note Avis Vérifiés dans le formulaire (PAC). Le badge flottant s'efface quand le formulaire est à l'écran, pour ne pas la montrer deux fois. */
+.quiz__avis{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;margin:-4px 0 14px;font-size:13.5px;color:var(--ink-2);text-decoration:none}
+.quiz__avis svg{width:16px;height:16px;fill:#1C6BC1;flex-shrink:0}
+.quiz__avis b{color:var(--navy);font-size:14.5px}
+.quiz__avis span{color:var(--ink-3);font-size:12.5px}
+.quiz__avis span::before{content:"(";}.quiz__avis span::after{content:")"}
+.quiz__avis:hover b{text-decoration:underline}
+.quiz-vu:has(.quiz__avis) .avis{opacity:0;visibility:hidden;pointer-events:none}
+/* Étape coordonnées : à quoi servent les coordonnées. */
+.step__secu{display:flex;align-items:center;gap:7px;margin:-6px 0 14px;font-size:13px;color:var(--ink-3)}
+.step__secu .ico{width:15px;height:15px;color:var(--green);flex-shrink:0}
