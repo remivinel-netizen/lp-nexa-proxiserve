@@ -242,7 +242,7 @@
     var st = steps[cur], key = st.getAttribute('data-step'), kind = st.getAttribute('data-kind') || 'radio';
     if (kind === 'radio') return !!checked(key);
     if (kind === 'cp'){
-      /* Adresse demandée seulement si la page a le champ (la PAC ne demande que le code postal). */
+      /* Adresse demandée seulement si la page a le champ (PAC, dépannage et entretien ne demandent que le code postal). */
       var adr = val('adresse');
       if (form.elements.adresse && adr.length < 5) { bad(form.elements.adresse, true); note('q-cp-note', 'Indiquez votre adresse.', true); return false; }
       var cp = val('code_postal');
