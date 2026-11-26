@@ -242,8 +242,9 @@
     var st = steps[cur], key = st.getAttribute('data-step'), kind = st.getAttribute('data-kind') || 'radio';
     if (kind === 'radio') return !!checked(key);
     if (kind === 'cp'){
+      /* Adresse demandée seulement si la page a le champ (la PAC ne demande que le code postal). */
       var adr = val('adresse');
-      if (adr.length < 5) { bad(form.elements.adresse, true); note('q-cp-note', 'Indiquez votre adresse.', true); return false; }
+      if (form.elements.adresse && adr.length < 5) { bad(form.elements.adresse, true); note('q-cp-note', 'Indiquez votre adresse.', true); return false; }
       var cp = val('code_postal');
       if (!/^\d{5}$/.test(cp)) { bad(form.elements.code_postal, true); note('q-cp-note', 'Indiquez les 5 chiffres de votre code postal.', true); return false; }
       if (state.cpStatus === 'none') { bad(form.elements.code_postal, true); note('q-cp-note', 'Ce code postal ne correspond à aucune commune. Vérifiez-le.', true); return false; }
