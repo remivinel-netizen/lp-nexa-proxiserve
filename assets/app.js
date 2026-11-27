@@ -432,6 +432,8 @@
     data.user_agent = navigator.userAgent;
     PKEYS.forEach(function(k){ data[k] = params[k] || ''; });
     data.premiere_visite = premiereVisite;
+    /* Consentement pub du bandeau cookies : le scénario Make n'envoie à Meta que les leads avec « oui ». */
+    data.consentement_pub = pubAcceptee() ? 'oui' : 'non';
     var endpoint = form.getAttribute('data-endpoint') || CFG.endpoint || '';
     var spam = !!document.getElementById('f-hp').value;
     var demo = spam || !endpoint || endpoint.indexOf('REMPLACER') > -1;
@@ -441,7 +443,7 @@
     req.then(function(resp){
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       if (demo && !spam) console.info('[MonChauffagistePrivé] webhook non configuré, envoi simulé :', data);
-      if (!spam) track('generate_lead', {form_name: THEME, priorite: data.priorite, departement: data.departement, zone: data.zone, user_data: {email: data.email, phone_number: data.telephone_e164}});
+      if (!spam) track('generate_lead', {lead_id: data.lead_id, form_name: THEME, priorite: data.priorite, departement: data.departement, zone: data.zone, user_data: {email: data.email, phone_number: data.telephone_e164}});
       finish(data);
     }).catch(function(){
       btn.disabled = false; btn.innerHTML = label;
